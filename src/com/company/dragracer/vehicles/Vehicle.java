@@ -1,17 +1,17 @@
 package com.company.dragracer.vehicles;
 
-import com.company.dragracer.parts.RaceEngine;
+import com.company.dragracer.parts.Engine;
 
 public abstract class Vehicle {
-    RaceEngine engine;
+    protected Engine engine;
     private int maxSpeed;
-    private int speedometer;
+    protected int speedometer;
     private String type;
-    private int distanceTraveled;
-    private int distanceToFinish;
-    private int time;
+    protected int distanceTraveled;
+    protected int distanceToFinish;
+    protected int time;
 
-    public Vehicle(RaceEngine engine, int maxSpeed, int speedometer, int distanceTraveled, int distanceToFinish, int time, String type) {
+    public Vehicle(Engine engine, int maxSpeed, int speedometer, int distanceTraveled, int distanceToFinish, int time, String type) {
         this.engine = engine;
         this.maxSpeed = maxSpeed;
         this.speedometer = speedometer;

@@ -1,6 +1,6 @@
 package com.company.dragracer.parts;
 
-public class CarEngine extends RaceEngine {
+public class CarEngine extends Engine {
 
     public CarEngine(int horsePower, String type, boolean isOperating) {
         super(horsePower, type, isOperating);

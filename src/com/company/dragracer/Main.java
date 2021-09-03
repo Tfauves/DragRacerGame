@@ -10,8 +10,16 @@ public class Main {
         System.out.println(engin1);
 
         Car racer01 = new Car(engin1,155, 0, 0,0,0,"custom racer");
+        System.out.println(racer01);
         racer01.start();
 //        racer01.turnOff();
         racer01.accelerate();
+        racer01.coast();
+        racer01.accelerate();
+        racer01.accelerate();
+        racer01.accelerate();
+        racer01.coast();
+
+
     }
 }
