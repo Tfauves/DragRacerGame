@@ -2,22 +2,25 @@ package com.company.dragracer.vehicles;
 import com.company.dragracer.parts.CarEngine;
 
 public class Car extends Vehicle{
+    int brakeRatio = 3;
+    int coastRatio = 2;
+    int accelRatio = 5;
 
     public Car(CarEngine engine, int maxSpeed, int speedometer, int distanceTraveled, int distanceToFinish, int time, String type) {
         super(engine, maxSpeed, speedometer, distanceTraveled, distanceToFinish, time, type);
     }
 
     public void start() {
-        engine.on();
+        getEngine().on();
     }
 
     public void turnOff() {
-        engine.off();
+        getEngine().off();
     }
 
     public void accelerate() {
-        int accelRatio = 5;
-        if (engine.getIsOperating() && speedometer < getMaxSpeed()) {
+        System.out.println("Accelerating...");
+        if (getEngine().getIsOperating() && speedometer < getMaxSpeed()) {
             speedometer += accelRatio;
             distanceTraveled += speedometer;
             time++;
@@ -36,12 +39,8 @@ public class Car extends Vehicle{
         displayDash();
     }
 
-
-
-
-
     public void coast() {
-        int coastRatio = 2;
+        System.out.println("Coasting...");
         speedometer -= coastRatio;
         distanceTraveled += coastRatio;
         time += coastRatio;
@@ -49,7 +48,18 @@ public class Car extends Vehicle{
     }
 
     public void brake() {
+        System.out.println("Braking...");
+        speedometer -= brakeRatio;
+        distanceTraveled += brakeRatio - coastRatio;
+        time += brakeRatio;
+        displayDash();
+    }
 
+    public void stopVehicle() {
+        System.out.println("Vehicle comes to a skidding stop...");
+        speedometer = 0;
+        time++;
+        displayDash();
     }
 
     public void displayDash() {
@@ -58,7 +68,7 @@ public class Car extends Vehicle{
     }
 
     public String toString() {
-        return "| Type: " + getType() + "| Engine: " + engine.getType() + " | Max Speed: " + getMaxSpeed() + " |";
+        return "| Type: " + getType() + " | Engine: " + getEngine() + " | Max Speed: " + getMaxSpeed() + " |";
 
     }
 }

@@ -3,7 +3,7 @@ package com.company.dragracer.vehicles;
 import com.company.dragracer.parts.Engine;
 
 public abstract class Vehicle {
-    protected Engine engine;
+    private Engine engine;
     private int maxSpeed;
     protected int speedometer;
     private String type;
@@ -36,36 +36,11 @@ public abstract class Vehicle {
         return type;
     }
 
-    public int getSpeedometer() {
-        return speedometer;
+    public Engine getEngine() {
+        return engine;
     }
 
-
-    public void setSpeedometer(int speedometer) {
-        this.speedometer = speedometer;
-    }
-
-    public int getDistanceTraveled() {
-        return distanceTraveled;
-    }
-
-    public void setDistanceTraveled(int distanceTraveled) {
-        this.distanceTraveled = distanceTraveled;
-    }
-
-    public int getDistanceToFinish() {
-        return distanceToFinish;
-    }
-
-    public void setDistanceToFinish(int distanceToFinish) {
-        this.distanceToFinish = distanceToFinish;
-    }
-
-    public int getTime() {
-        return time;
-    }
-
-    public void setTime(int time) {
-        this.time = time;
+    public void setEngine(Engine engine) {
+        this.engine = engine;
     }
 }

@@ -21,6 +21,6 @@ public class CarEngine extends Engine {
     }
 
     public String toString() {
-        return "| Type: " + type + " | Horse Power: " + horsePower + " |\n";
+        return "| Type: " + type + " | Horse Power: " + horsePower + " |";
     }
 }
