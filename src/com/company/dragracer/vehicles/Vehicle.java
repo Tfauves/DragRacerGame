@@ -1,9 +1,9 @@
 package com.company.dragracer.vehicles;
 
-import com.company.dragracer.parts.Engine;
+import com.company.dragracer.parts.RaceEngine;
 
 public abstract class Vehicle {
-    Engine engine;
+    RaceEngine engine;
     private int maxSpeed;
     private int speedometer;
     private String type;
@@ -11,7 +11,7 @@ public abstract class Vehicle {
     private int distanceToFinish;
     private int time;
 
-    public Vehicle(Engine engine, int maxSpeed, int speedometer, int distanceTraveled, int distanceToFinish, int time, String type) {
+    public Vehicle(RaceEngine engine, int maxSpeed, int speedometer, int distanceTraveled, int distanceToFinish, int time, String type) {
         this.engine = engine;
         this.maxSpeed = maxSpeed;
         this.speedometer = speedometer;
@@ -43,5 +43,29 @@ public abstract class Vehicle {
 
     public void setSpeedometer(int speedometer) {
         this.speedometer = speedometer;
+    }
+
+    public int getDistanceTraveled() {
+        return distanceTraveled;
+    }
+
+    public void setDistanceTraveled(int distanceTraveled) {
+        this.distanceTraveled = distanceTraveled;
+    }
+
+    public int getDistanceToFinish() {
+        return distanceToFinish;
+    }
+
+    public void setDistanceToFinish(int distanceToFinish) {
+        this.distanceToFinish = distanceToFinish;
+    }
+
+    public int getTime() {
+        return time;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
     }
 }

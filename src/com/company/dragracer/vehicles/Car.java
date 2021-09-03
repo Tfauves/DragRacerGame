@@ -1,11 +1,12 @@
 package com.company.dragracer.vehicles;
 
-import com.company.dragracer.parts.Engine;
+import com.company.dragracer.parts.CarEngine;
+import com.company.dragracer.parts.RaceEngine;
 
 
 public class Car extends Vehicle{
 
-    public Car(Engine engine, int maxSpeed, int speedometer, int distanceTraveled, int distanceToFinish, int time, String type) {
+    public Car(CarEngine engine, int maxSpeed, int speedometer, int distanceTraveled, int distanceToFinish, int time, String type) {
 
         super(engine, maxSpeed, speedometer, distanceTraveled, distanceToFinish, time, type);
     }
@@ -19,16 +20,8 @@ public class Car extends Vehicle{
     }
 
     public void accelerate() {
-        int speedIncrement = 15;
-
         if (engine.getIsOperating() && getSpeedometer() < getMaxSpeed()) {
-           setSpeedometer(getSpeedometer() + speedIncrement);
-            System.out.println("\nAccelerate.. \nSpeedometer: " + getSpeedometer() + " mph." + "\n Track Distance: ");
-            //superCharger and nitrous will be able to be applied to increase the max speed amount.
 
-        } else if (getSpeedometer() >= getMaxSpeed()) {
-            setSpeedometer(getMaxSpeed());
-            System.out.println("\n The vehicle is at its max speed " + getSpeedometer() + " mph.");
         }
 
 

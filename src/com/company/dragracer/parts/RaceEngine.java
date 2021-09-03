@@ -1,26 +1,31 @@
 package com.company.dragracer.parts;
 
-public class RaceEngine extends Engine{
+public abstract class RaceEngine implements Engine {
+    protected int horsePower;
+    protected String type;
+    protected boolean isOperating;
 
     public RaceEngine(int horsePower, String type, boolean isOperating) {
-        super(horsePower, type, isOperating);
+        this.horsePower = horsePower;
+        this.type = type;
+        this.isOperating = isOperating;
     }
 
-    public void on() {
-        if (!getIsOperating()) {
-            setOperating(true);
-            System.out.println("Engine is running");
-        }
+    public abstract String toString();
+
+    public int getHorsePower() {
+        return horsePower;
     }
 
-    public void off() {
-        if (getIsOperating()) {
-            setOperating(false);
-            System.out.println("Engine is off");
-        }
+    public String getType() {
+        return type;
     }
 
-    public String toString() {
-        return "| Type: " + getType() + " | Horse Power: " + getHorsePower() + " | \n";
+    public boolean getIsOperating() {
+        return isOperating;
+    }
+
+    public void setOperating(boolean operating) {
+        isOperating = operating;
     }
 }
