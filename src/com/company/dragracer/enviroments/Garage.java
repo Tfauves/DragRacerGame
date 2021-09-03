@@ -15,7 +15,7 @@ public class Garage {
 
     private Car carChoice;
     private CarEngine engineChoice;
-    private Car playerCar;
+    protected Car playerCar;
 
     Car streetRacer1 = new Car(null, 170,0, 0, 0, 0, "Subaru Impreza WRX");
     Car streetRacer2 = new Car(null, 155,0, 0, 0, 0, "Volkswagen Golf/GTI");
@@ -77,11 +77,6 @@ public class Garage {
         System.out.println();
         System.out.println("Your Car:" + car);
     }
-
-    public Car getPlayerCar() {
-        return playerCar;
-    }
-
 
 
 }
