@@ -26,7 +26,8 @@ public class Main {
 
         Garage garage = new Garage();
 //        garage.listBuild();
-        garage.carBuilder();
+//        garage.carBuilder();
+        garage.start();
 
 
     }
