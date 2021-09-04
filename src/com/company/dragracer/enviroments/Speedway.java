@@ -4,14 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Speedway {
-    private List<Track> trackList = new ArrayList<>();
+    private final static String SELECT_TRACK_PROMPT = "Select A Track";
+    private final static String MENU_PROMPT = "Make your selection";
 
 
+    private final String[] CAR_LIST = new String[] {
+            "1. | Type: Subaru Impreza WRX | Max Speed: 170 mps",
+            "2. | Volkswagen Golf/GTI  | Max Speed: 155 mps ",
+            "3. | Quit "
+    };
 
-    public void trackBuilder(String lvlOfDifficulty, int distance, Hazard hazardType) {
-        Track track = new Track(lvlOfDifficulty, distance, hazardType);
-        trackList.add(track);
-    }
+    private final  String[] TRACK_LIST = new String[] {
+            "1. | Difficulty: Noob | Distance to finish: 400 meters |"
+    };
 
     public void displayTrack() {
         for (Track tracks : trackList) {
