@@ -88,12 +88,12 @@ public class Speedway {
                         playerVehicle.coast();
                         break;
                     case "s":
-                        // TODO: 9/5/2021 why cant i access stop method in Car 
-//                        playerVehicle.
+                        playerVehicle.stop();
                         break;
                     case "e":
                         // TODO: 9/5/2021 return to garage end race.
                         System.out.println("The race is over...heading back to garage");
+                        playerVehicle.displayDash();
                         isActive = false;
                         System.exit(0);
                         break;

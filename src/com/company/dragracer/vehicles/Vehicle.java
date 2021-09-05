@@ -26,6 +26,12 @@ public abstract class Vehicle {
     public abstract void accelerate();
     public abstract void coast();
     public abstract void brake();
+    public abstract void stop();
+
+    public void displayDash() {
+        System.out.println("| Speed: " + speedometer + "mps | Finish: " + distanceToFinish + "m | Odometer: " + distanceTraveled + "m | Time: " + time + "s |");
+
+    }
     public abstract String toString();
 
     public int getMaxSpeed() {

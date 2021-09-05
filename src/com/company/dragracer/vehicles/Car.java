@@ -55,17 +55,17 @@ public class Car extends Vehicle{
         displayDash();
     }
 
-    public void stopVehicle() {
+    public void stop() {
         System.out.println("Vehicle comes to a skidding stop...");
         speedometer = 0;
         time++;
         displayDash();
     }
 
-    public void displayDash() {
-        System.out.println("| Speed: " + speedometer + "mps | Finish: " + distanceToFinish + "m | Odometer: " + distanceTraveled + "m | Time: " + time + "s |");
-
-    }
+//    public void displayDash() {
+//        System.out.println("| Speed: " + speedometer + "mps | Finish: " + distanceToFinish + "m | Odometer: " + distanceTraveled + "m | Time: " + time + "s |");
+//
+//    }
 
     public String toString() {
         return "| Type: " + getType() + " | Engine: " + getEngine() + " | Max Speed: " + getMaxSpeed() + " |";
