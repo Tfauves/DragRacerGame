@@ -1,6 +1,8 @@
 package com.company.dragracer.enviroments;
 
 
+import com.company.dragracer.vehicles.Car;
+
 public class Speedway {
     private final static String SELECT_TRACK_PROMPT = "Select A Track";
     private final static String MENU_PROMPT = "Make your selection";
@@ -86,4 +88,48 @@ public class Speedway {
         playerGarage.playerCar.setDistanceToFinish(newTrack.length);
         System.out.println(newTrack.toString());
     }
+
+    public void race() {
+        boolean isActive = true;
+        System.out.println("Press (s) to start your engine");
+        String userInput = Garage.scanner.next();
+        if (userInput.equals("s")) {
+            playerGarage.playerCar.start();
+        } else {
+            System.out.println("Please start your vehicle to begin driving.");
+        }
+        while (isActive) {
+            if (playerGarage.playerCar.getEngine().getIsOperating()) {
+                System.out.println("Press (a) to accelerate, (b) to brake, (c) to coast, (s) to stop short, (e) end race and to return to garage");
+                userInput = Garage.scanner.next();
+                switch (userInput) {
+                    case "a" :
+                        // TODO: 9/5/2021 accelerate()
+                            break;
+                    case "b":
+                        // TODO: 9/5/2021 brake()
+                        break;
+
+                    case "c":
+                        // TODO: 9/5/2021 coast()
+                        break;
+                    case "s":
+                        // TODO: 9/5/2021 stop()
+                        break;
+                    case "e":
+                        // TODO: 9/5/2021 return to garage end race.
+                        System.out.println("The race is over...heading back to garage");
+                        isActive = false;
+                        System.exit(0);
+                        break;
+                    default:
+                        System.out.println("Not Valid");
+                        break;
+                }
+
+            }
+        }
+
+    }
+
 }

@@ -12,7 +12,6 @@ public class Garage {
     private final static String MENU_PROMPT = "Make your selection";
 
 
-
     private final String[] CAR_LIST = new String[] {
             "1. | Type: Subaru Impreza WRX | Max Speed: 170 mps |",
             "2. | Volkswagen Golf/GTI  | Max Speed: 155 mps |",
@@ -38,7 +37,6 @@ public class Garage {
             displayOptions(MENU_PROMPT, CAR_LIST);
             int choice = getInt(1, 3, SELECT_CAR_PROMPT);
             if (choice == 3) {
-                isActive = false;
                 System.exit(0);
             }
             handleMenuSelection(choice);
@@ -87,8 +85,4 @@ public class Garage {
         System.out.println("| Your car |" + playerCar);
     }
 
-
-    public Car getPlayerCar() {
-        return playerCar;
-    }
 }

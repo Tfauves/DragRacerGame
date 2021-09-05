@@ -14,6 +14,7 @@ public class Main {
         Speedway speedway = new Speedway(garage);
         garage.start();
         speedway.startTrack();
+        speedway.race();
 
     }
 }
