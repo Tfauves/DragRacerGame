@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
 
         Garage garage = new Garage();
-        Speedway speedway = new Speedway();
+        Speedway speedway = new Speedway(garage);
         garage.start();
         speedway.startTrack();
 

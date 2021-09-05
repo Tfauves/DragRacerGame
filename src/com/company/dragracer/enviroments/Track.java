@@ -2,8 +2,8 @@ package com.company.dragracer.enviroments;
 
 public class Track {
     private String lvlOfDifficulty;
-    private int length;
-    public Hazard hazard;
+    protected int length;
+    protected Hazard hazard;
 
     public Track(String lvlOfDifficulty, int length, Hazard hazard) {
         this.lvlOfDifficulty = lvlOfDifficulty;

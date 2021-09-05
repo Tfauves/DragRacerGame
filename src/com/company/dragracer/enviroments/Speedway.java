@@ -1,15 +1,16 @@
 package com.company.dragracer.enviroments;
 
-import com.company.dragracer.parts.CarEngine;
-import com.company.dragracer.vehicles.Car;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Speedway {
     private final static String SELECT_TRACK_PROMPT = "Select A Track";
     private final static String MENU_PROMPT = "Make your selection";
     Track newTrack;
+    Garage playerGarage;
+
+    public Speedway(Garage playerGarage) {
+        this.playerGarage = playerGarage;
+    }
+
 
     private final String[] TRACK_LIST = new String[]{
             "1. | Difficulty: Noob | Distance to finish: 200 meters | Hazard: None |",
@@ -24,7 +25,6 @@ public class Speedway {
         }
     }
 
-
     public void startTrack() {
         boolean isActive = true;
         while (isActive) {
@@ -38,24 +38,25 @@ public class Speedway {
             isActive = false;
         }
     }
-
-    private void selectTrack() {
-        displayTrackOptions(SELECT_TRACK_PROMPT, TRACK_LIST);
-        int choice = getInt(1, TRACK_LIST.length, SELECT_TRACK_PROMPT);
-        Track newTrack;
-        switch (choice) {
-            case 1 -> newTrack = new Track("Noob", 200, null);
-            case 2 -> newTrack = new Track("Beginner", 400, null);
-            case 3 -> newTrack = new Track("Seasoned", 400, null);
-            case 4 -> newTrack = new Track("Pro", 800, null);
-            default -> {
-                System.out.println("error...");
-                newTrack = null;
-            }
-
-        }
-        // TODO: 9/4/2021  set player car distance to finish equal to selected track length.
-    }
+//
+//    public void selectTrack() {
+//        displayTrackOptions(SELECT_TRACK_PROMPT, TRACK_LIST);
+//        int choice = getInt(1, TRACK_LIST.length, SELECT_TRACK_PROMPT);
+//        Track newTrack;
+//        switch (choice) {
+//            case 1 -> newTrack = new Track("Noob", 200, null);
+//            case 2 -> newTrack = new Track("Beginner", 400, null);
+//            case 3 -> newTrack = new Track("Seasoned", 400, null);
+//            case 4 -> newTrack = new Track("Pro", 800, null);
+//            default -> {
+//                System.out.println("error...");
+//                newTrack = null;
+//            }
+//
+//        }
+//        playerGarage.getPlayerCar().setDistanceToFinish(newTrack.getLength());
+//        System.out.println(newTrack);
+//    }
 
     public static int getInt(int min, int max, String prompt) {
         int option = min - 1;
@@ -81,9 +82,8 @@ public class Speedway {
                 System.out.println("error...");
                 newTrack = null;
             }
-//        selectEngine();
         }
+        playerGarage.playerCar.setDistanceToFinish(newTrack.length);
         System.out.println(newTrack.toString());
-
     }
 }
