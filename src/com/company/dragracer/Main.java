@@ -13,7 +13,7 @@ public class Main {
         Garage garage = new Garage();
         Speedway speedway = new Speedway();
         garage.start();
-        speedway.startTrack();
+        speedway.selectTrack();
         speedway.race(garage.getPlayerCar());
 
     }
