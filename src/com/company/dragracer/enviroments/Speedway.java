@@ -9,22 +9,23 @@ import java.util.List;
 public class Speedway {
     private final static String SELECT_TRACK_PROMPT = "Select A Track";
     private final static String MENU_PROMPT = "Make your selection";
+    Track newTrack;
 
-    private final  String[] TRACK_LIST = new String[] {
+    private final String[] TRACK_LIST = new String[]{
             "1. | Difficulty: Noob | Distance to finish: 200 meters | Hazard: None |",
             "2. | Difficulty: Beginner | Distance to finish: 400 meters | Hazard: Watery Lake |",
             "3. | Difficulty: Seasoned | Distance to finish: 600 meters | Hazard: Flaming Wall Of Hay",
             "4. | Difficulty: Pro | Distance to finish: 800 meters | Hazard: Super Hard Brick Wall",
     };
 
-    public void displayTrackOptions (String prompt, String[] options) {
+    public void displayTrackOptions(String prompt, String[] options) {
         for (String option : options) {
             System.out.println(option);
         }
     }
 
 
-    public void start() {
+    public void startTrack() {
         boolean isActive = true;
         while (isActive) {
             displayTrackOptions(MENU_PROMPT, TRACK_LIST);
@@ -44,9 +45,9 @@ public class Speedway {
         Track newTrack;
         switch (choice) {
             case 1 -> newTrack = new Track("Noob", 200, null);
-            case 2 -> newTrack =  new Track("Beginner", 400, null) ;
-            case 3 -> newTrack =  new Track("Seasoned", 400, null) ;
-            case 4 -> newTrack =  new Track("Pro", 800, null) ;
+            case 2 -> newTrack = new Track("Beginner", 400, null);
+            case 3 -> newTrack = new Track("Seasoned", 400, null);
+            case 4 -> newTrack = new Track("Pro", 800, null);
             default -> {
                 System.out.println("error...");
                 newTrack = null;
@@ -61,7 +62,7 @@ public class Speedway {
         do {
             System.out.println(prompt);
             String input = Garage.scanner.nextLine();
-            try{
+            try {
                 option = Integer.parseInt(input);
             } catch (NumberFormatException err) {
                 System.out.println("Invalid Selection...");
@@ -70,15 +71,19 @@ public class Speedway {
         return option;
     }
 
-//    public void handleMenuSelection(int choice) {
-//        switch (choice) {
-//            case 1 -> playerCar = new Car(null, 170,0, 0, 0, 0, "Subaru Impreza WRX");
-//            case 2 -> playerCar = new Car(null, 155,0, 0, 0, 0, "Volkswagen Golf/GTI");
-//            case 3 -> System.exit(0);
-//            default -> System.out.println("Invalid number received...");
-//        }
+    public void handleMenuSelection(int choice) {
+        switch (choice) {
+            case 1 -> newTrack = new Track("Noob", 200, null);
+            case 2 -> newTrack = new Track("Beginner", 400, null);
+            case 3 -> newTrack = new Track("Seasoned", 400, null);
+            case 4 -> newTrack = new Track("Pro", 800, null);
+            default -> {
+                System.out.println("error...");
+                newTrack = null;
+            }
 //        selectEngine();
 //        System.out.println("Your car: " + playerCar);
-//    }
-//
+        }
+
+    }
 }
