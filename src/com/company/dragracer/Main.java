@@ -11,10 +11,10 @@ public class Main {
     public static void main(String[] args) {
 
         Garage garage = new Garage();
-        Speedway speedway = new Speedway(garage);
+        Speedway speedway = new Speedway();
         garage.start();
         speedway.startTrack();
-        speedway.race();
+        speedway.race(garage.getPlayerCar());
 
     }
 }

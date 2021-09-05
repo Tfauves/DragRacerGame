@@ -1,17 +1,16 @@
 package com.company.dragracer.enviroments;
 
-
-import com.company.dragracer.vehicles.Car;
+import com.company.dragracer.vehicles.Vehicle;
 
 public class Speedway {
     private final static String SELECT_TRACK_PROMPT = "Select A Track";
     private final static String MENU_PROMPT = "Make your selection";
     Track newTrack;
-    Garage playerGarage;
-
-    public Speedway(Garage playerGarage) {
-        this.playerGarage = playerGarage;
-    }
+//    Garage playerGarage;
+//
+//    public Speedway(Garage playerGarage) {
+//        this.playerGarage = playerGarage;
+//    }
 
 
     private final String[] TRACK_LIST = new String[]{
@@ -85,21 +84,24 @@ public class Speedway {
                 newTrack = null;
             }
         }
-        playerGarage.playerCar.setDistanceToFinish(newTrack.length);
+//        playerGarage.playerCar.setDistanceToFinish(newTrack.length);
         System.out.println(newTrack.toString());
     }
 
-    public void race() {
+    public void race(Vehicle playerVehicle) {
         boolean isActive = true;
         System.out.println("Press (s) to start your engine");
         String userInput = Garage.scanner.next();
         if (userInput.equals("s")) {
-            playerGarage.playerCar.start();
+            playerVehicle.start();
+            playerVehicle.setDistanceToFinish(newTrack.length);
+//            playerGarage.playerCar.start();
         } else {
             System.out.println("Please start your vehicle to begin driving.");
         }
         while (isActive) {
-            if (playerGarage.playerCar.getEngine().getIsOperating()) {
+//            playerGarage.playerCar.getEngine().getIsOperating()
+            if (playerVehicle.getEngine().getIsOperating()) {
                 System.out.println("Press (a) to accelerate, (b) to brake, (c) to coast, (s) to stop short, (e) end race and to return to garage");
                 userInput = Garage.scanner.next();
                 switch (userInput) {
