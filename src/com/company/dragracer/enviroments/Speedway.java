@@ -79,17 +79,17 @@ public class Speedway {
                 userInput = Garage.scanner.next();
                 switch (userInput) {
                     case "a" :
-                        // TODO: 9/5/2021 accelerate()
-                            break;
-                    case "b":
-                        // TODO: 9/5/2021 brake()
+                        playerVehicle.accelerate();
                         break;
-
+                    case "b":
+                        playerVehicle.brake();
+                        break;
                     case "c":
-                        // TODO: 9/5/2021 coast()
+                        playerVehicle.coast();
                         break;
                     case "s":
-                        // TODO: 9/5/2021 stop()
+                        // TODO: 9/5/2021 why cant i access stop method in Car 
+//                        playerVehicle.
                         break;
                     case "e":
                         // TODO: 9/5/2021 return to garage end race.

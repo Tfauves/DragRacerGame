@@ -8,7 +8,7 @@ public abstract class Vehicle {
     protected int speedometer;
     private String type;
     protected int distanceTraveled;
-    private int distanceToFinish;
+    protected int distanceToFinish;
     protected int time;
 
     public Vehicle(Engine engine, int maxSpeed, int speedometer, int distanceTraveled, int distanceToFinish, int time, String type) {
