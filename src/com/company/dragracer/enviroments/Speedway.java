@@ -82,8 +82,8 @@ public class Speedway {
                 newTrack = null;
             }
 //        selectEngine();
-//        System.out.println("Your car: " + playerCar);
         }
+        System.out.println(newTrack.toString());
 
     }
 }

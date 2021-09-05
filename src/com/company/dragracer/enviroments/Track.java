@@ -14,4 +14,9 @@ public class Track {
     public int getLength() {
         return length;
     }
+
+    public String toString() {
+        String outPut = "| Track Selected || Level Of Difficulty: " + lvlOfDifficulty + " | Length: " + length + "m | Hazard: " + hazard + " |";
+        return outPut;
+    }
 }

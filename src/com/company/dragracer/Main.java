@@ -15,6 +15,5 @@ public class Main {
         garage.start();
         speedway.startTrack();
 
-
     }
 }
