@@ -11,10 +11,10 @@ public class Speedway {
     private final static String MENU_PROMPT = "Make your selection";
 
     private final  String[] TRACK_LIST = new String[] {
-            "1. | Difficulty: Noob | Distance to finish: 200 meters |",
-            "2. | Difficulty: Beginner | Distance to finish: 400 meters |",
-            "3. | Difficulty: Seasoned | Distance to finish: 600 meters |",
-            "4. | Difficulty: Pro | Distance to finish: 800 meters |",
+            "1. | Difficulty: Noob | Distance to finish: 200 meters | Hazard: None |",
+            "2. | Difficulty: Beginner | Distance to finish: 400 meters | Hazard: Watery Lake |",
+            "3. | Difficulty: Seasoned | Distance to finish: 600 meters | Hazard: Flaming Wall Of Hay",
+            "4. | Difficulty: Pro | Distance to finish: 800 meters | Hazard: Super Hard Brick Wall",
     };
 
     public void displayTrackOptions (String prompt, String[] options) {
@@ -38,27 +38,29 @@ public class Speedway {
         }
     }
 
-    private void selectEngine() {
-        displayOptions(SELECT_ENGINE_PROMPT, ENGINE_LIST);
-        int choice = getInt(1, ENGINE_LIST.length, SELECT_ENGINE_PROMPT);
-        CarEngine newEngine;
+    private void selectTrack() {
+        displayTrackOptions(SELECT_TRACK_PROMPT, TRACK_LIST);
+        int choice = getInt(1, TRACK_LIST.length, SELECT_TRACK_PROMPT);
+        Track newTrack;
         switch (choice) {
-            case 1 -> newEngine = new CarEngine(205, "V6 gas", false);
-            case 2 -> newEngine =  new CarEngine(394, "in6 gas", false) ;
+            case 1 -> newTrack = new Track("Noob", 200, null);
+            case 2 -> newTrack =  new Track("Beginner", 400, null) ;
+            case 3 -> newTrack =  new Track("Seasoned", 400, null) ;
+            case 4 -> newTrack =  new Track("Pro", 800, null) ;
             default -> {
                 System.out.println("error...");
-                newEngine = null;
+                newTrack = null;
             }
 
         }
-        playerCar.setEngine(newEngine);
+        // TODO: 9/4/2021  set player car distance to finish equal to selected track length.
     }
 
     public static int getInt(int min, int max, String prompt) {
         int option = min - 1;
         do {
             System.out.println(prompt);
-            String input = scanner.nextLine();
+            String input = Garage.scanner.nextLine();
             try{
                 option = Integer.parseInt(input);
             } catch (NumberFormatException err) {
@@ -68,23 +70,15 @@ public class Speedway {
         return option;
     }
 
-    public void handleMenuSelection(int choice) {
-        switch (choice) {
-            case 1 -> playerCar = new Car(null, 170,0, 0, 0, 0, "Subaru Impreza WRX");
-            case 2 -> playerCar = new Car(null, 155,0, 0, 0, 0, "Volkswagen Golf/GTI");
-            case 3 -> System.exit(0);
-            default -> System.out.println("Invalid number received...");
-        }
-        selectEngine();
-        System.out.println("Your car: " + playerCar);
-    }
-
-
-
-
-    public void displayTrack() {
-        for (Track tracks : trackList) {
-            System.out.println(tracks);
-        }
-    }
+//    public void handleMenuSelection(int choice) {
+//        switch (choice) {
+//            case 1 -> playerCar = new Car(null, 170,0, 0, 0, 0, "Subaru Impreza WRX");
+//            case 2 -> playerCar = new Car(null, 155,0, 0, 0, 0, "Volkswagen Golf/GTI");
+//            case 3 -> System.exit(0);
+//            default -> System.out.println("Invalid number received...");
+//        }
+//        selectEngine();
+//        System.out.println("Your car: " + playerCar);
+//    }
+//
 }

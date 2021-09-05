@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Garage {
     public static final Scanner scanner = new Scanner(System.in);
-    protected Car playerCar;
+    private Car playerCar;
     private final static String SELECT_CAR_PROMPT = "Enter car selection";
     private final static String SELECT_ENGINE_PROMPT = "Enter engine selection";
     private final static String MENU_PROMPT = "Make your selection";
@@ -88,4 +88,7 @@ public class Garage {
     }
 
 
+    public Car getPlayerCar() {
+        return playerCar;
+    }
 }
