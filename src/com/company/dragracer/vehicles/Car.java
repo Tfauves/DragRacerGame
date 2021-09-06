@@ -1,13 +1,22 @@
 package com.company.dragracer.vehicles;
 import com.company.dragracer.parts.CarEngine;
 
+import java.util.Random;
+
 public class Car extends Vehicle{
     int brakeRatio = 3;
     int coastRatio = 2;
-    int accelRatio = 5;
+    int accelRatio;
 
     public Car(CarEngine engine, int maxSpeed, int speedometer, int distanceTraveled, int distanceToFinish, int time, String type) {
         super(engine, maxSpeed, speedometer, distanceTraveled, distanceToFinish, time, type);
+    }
+
+    public void actionRatio() {
+        Random acceleration = new Random();
+        int maxSpeedJump = 6;
+        int minSpeedJump = 1;
+        accelRatio = acceleration.nextInt(maxSpeedJump) + minSpeedJump;
     }
 
     public void start() {
@@ -19,11 +28,12 @@ public class Car extends Vehicle{
     }
 
     public void accelerate() {
+        actionRatio();
         System.out.println("Accelerating...");
         if (getEngine().getIsOperating() && speedometer < getMaxSpeed()) {
             speedometer += accelRatio;
             distanceTraveled += speedometer;
-            time++;
+            time = distanceTraveled + accelRatio;
         }
         if (speedometer == getMaxSpeed()) {
             System.out.println("Traveling at max speed");

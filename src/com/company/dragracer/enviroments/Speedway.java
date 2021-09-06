@@ -95,17 +95,18 @@ public class Speedway {
                     }
                     default -> System.out.println("Not Valid");
                 }
+
             }
         }
     }
 
+    // TODO: 9/5/2021 define end of the race.
     public void finishRace(Vehicle playerCar) {
-        int finishLine = playerCar.getDistanceTraveled() - playerCar.getDistanceToFinish();
-
-
+        int finishLine =  playerCar.getDistanceToFinish() - playerCar.getDistanceTraveled() ;
+        playerCar.setDistanceToFinish(finishLine);
+        if (playerCar.getDistanceToFinish() == 0) {
+            System.out.println("at the finish line");
+        }
     }
-
-    // TODO: 9/5/2021 define end of the race. 
-
-
 }
+
