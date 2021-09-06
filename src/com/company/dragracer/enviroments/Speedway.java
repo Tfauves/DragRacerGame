@@ -97,15 +97,22 @@ public class Speedway {
                 }
 
             }
+            finishLine(playerVehicle);
         }
     }
 
     // TODO: 9/5/2021 define end of the race.
-    public void finishRace(Vehicle playerCar) {
-        int finishLine =  playerCar.getDistanceToFinish() - playerCar.getDistanceTraveled() ;
-        playerCar.setDistanceToFinish(finishLine);
-        if (playerCar.getDistanceToFinish() == 0) {
-            System.out.println("at the finish line");
+    public void finishLine(Vehicle playerCar) {
+        int finishApproach = 5;
+        int finishLine = playerCar.getDistanceToFinish();
+        if (playerCar.getDistanceTraveled() < finishLine - finishApproach) {
+            System.out.println("approaching the finish line");
+        }
+        if (playerCar.getDistanceTraveled() == finishLine) {
+            System.out.println("at finish line ");
+        }
+        if (playerCar.getDistanceTraveled() > finishLine + finishApproach) {
+            System.out.println("crossed over finish line");
         }
     }
 }

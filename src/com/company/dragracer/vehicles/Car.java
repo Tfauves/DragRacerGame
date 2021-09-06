@@ -4,9 +4,9 @@ import com.company.dragracer.parts.CarEngine;
 import java.util.Random;
 
 public class Car extends Vehicle{
-    int brakeRatio = 3;
-    int coastRatio = 2;
-    int accelRatio;
+    private int brakeRatio = 3;
+    private int coastRatio = 2;
+    private int accelRatio;
 
     public Car(CarEngine engine, int maxSpeed, int speedometer, int distanceTraveled, int distanceToFinish, int time, String type) {
         super(engine, maxSpeed, speedometer, distanceTraveled, distanceToFinish, time, type);
@@ -33,7 +33,7 @@ public class Car extends Vehicle{
         if (getEngine().getIsOperating() && speedometer < getMaxSpeed()) {
             speedometer += accelRatio;
             distanceTraveled += speedometer;
-            time = distanceTraveled + accelRatio;
+            time = distanceTraveled / accelRatio;
         }
         if (speedometer == getMaxSpeed()) {
             System.out.println("Traveling at max speed");
@@ -75,5 +75,9 @@ public class Car extends Vehicle{
     public String toString() {
         return "| Type: " + getType() + " | Engine: " + getEngine() + " | Max Speed: " + getMaxSpeed() + " |";
 
+    }
+
+    public int getAccelRatio() {
+        return accelRatio;
     }
 }
