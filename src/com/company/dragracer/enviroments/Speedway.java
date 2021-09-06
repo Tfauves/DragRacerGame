@@ -62,8 +62,7 @@ public class Speedway {
         System.out.println(newTrack.toString());
     }
 
-    public void race(Vehicle playerVehicle) {
-        boolean isActive = true;
+    public void racePrompt(Vehicle playerVehicle) {
         System.out.println("Press (s) to start your engine");
         String userInput = Garage.scanner.next();
         // TODO: 9/5/2021 error checking 
@@ -73,6 +72,12 @@ public class Speedway {
         } else {
             System.out.println("Please start your vehicle to begin driving.");
         }
+    }
+
+    public void race(Vehicle playerVehicle) {
+        racePrompt(playerVehicle);
+        boolean isActive = true;
+        String userInput;
         while (isActive) {
             if (playerVehicle.getEngine().getIsOperating()) {
                 System.out.println("Press (a) to accelerate, (b) to brake, (c) to coast, (s) to stop short, (e) end race and to return to garage");
@@ -106,5 +111,4 @@ public class Speedway {
         }
 
     }
-
 }
