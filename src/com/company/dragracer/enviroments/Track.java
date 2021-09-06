@@ -5,6 +5,7 @@ public class Track {
     protected int length;
     protected Hazard hazard;
 
+    // TODO: 9/5/2021 imp-lement hazards. 
     public Track(String lvlOfDifficulty, int length, Hazard hazard) {
         this.lvlOfDifficulty = lvlOfDifficulty;
         this.length = length;

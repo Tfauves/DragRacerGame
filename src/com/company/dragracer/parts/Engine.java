@@ -12,20 +12,8 @@ public abstract class Engine implements Engines {
     }
 
     public abstract String toString();
-
-    public int getHorsePower() {
-        return horsePower;
-    }
-
-    public String getType() {
-        return type;
-    }
-
     public boolean getIsOperating() {
         return isOperating;
     }
 
-    public void setOperating(boolean operating) {
-        isOperating = operating;
-    }
 }

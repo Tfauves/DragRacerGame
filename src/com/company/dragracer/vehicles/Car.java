@@ -62,11 +62,6 @@ public class Car extends Vehicle{
         displayDash();
     }
 
-//    public void displayDash() {
-//        System.out.println("| Speed: " + speedometer + "mps | Finish: " + distanceToFinish + "m | Odometer: " + distanceTraveled + "m | Time: " + time + "s |");
-//
-//    }
-
     public String toString() {
         return "| Type: " + getType() + " | Engine: " + getEngine() + " | Max Speed: " + getMaxSpeed() + " |";
 

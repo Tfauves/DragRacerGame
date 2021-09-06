@@ -4,7 +4,7 @@ import com.company.dragracer.vehicles.Vehicle;
 
 public class Speedway {
     private final static String SELECT_TRACK_PROMPT = "Select A Track";
-    private final static String MENU_PROMPT = "Make your selection";
+    private final static String MENU_PROMPT = "Make your Selection";
     Track newTrack;
 
     private final String[] TRACK_LIST = new String[]{
@@ -83,32 +83,23 @@ public class Speedway {
                 System.out.println("Press (a) to accelerate, (b) to brake, (c) to coast, (s) to stop short, (e) end race and to return to garage");
                 userInput = Garage.scanner.next();
                 switch (userInput) {
-                    case "a" :
-                        playerVehicle.accelerate();
-                        break;
-                    case "b":
-                        playerVehicle.brake();
-                        break;
-                    case "c":
-                        playerVehicle.coast();
-                        break;
-                    case "s":
-                        playerVehicle.stop();
-                        break;
-                    case "e":
-                        // TODO: 9/5/2021 return to garage end race.
+                    case "a" -> playerVehicle.accelerate();
+                    case "b" -> playerVehicle.brake();
+                    case "c" -> playerVehicle.coast();
+                    case "s" -> playerVehicle.stop();
+                    case "e" -> {
                         System.out.println("The race is over...heading back to garage");
                         playerVehicle.displayDash();
                         isActive = false;
                         System.exit(0);
-                        break;
-                    default:
-                        System.out.println("Not Valid");
-                        break;
+                    }
+                    default -> System.out.println("Not Valid");
                 }
-
             }
         }
-
     }
+
+    // TODO: 9/5/2021 define end of the race. 
+
+
 }
