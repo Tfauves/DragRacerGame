@@ -10,4 +10,12 @@ public class Hazard {
         this.distanceFromFinish = distanceFromFinish;
         this.damage = damage;
     }
+
+    public int getDistanceFromFinish() {
+        return distanceFromFinish;
+    }
+
+    public String getType() {
+        return type;
+    }
 }

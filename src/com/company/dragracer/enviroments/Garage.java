@@ -76,8 +76,8 @@ public class Garage {
 
     public void handleMenuSelection(int choice) {
         switch (choice) {
-            case 1 -> playerCar = new Car(null, 170,0, 0, 0, 0, "Subaru Impreza WRX");
-            case 2 -> playerCar = new Car(null, 155,0, 0, 0, 0, "Volkswagen Golf/GTI");
+            case 1 -> playerCar = new Car(null, 75,0, 0, 0, 0, "Subaru Impreza WRX");
+            case 2 -> playerCar = new Car(null, 69,0, 0, 0, 0, "Volkswagen Golf/GTI");
             case 3 -> System.exit(0);
             default -> System.out.println("Invalid number received...");
         }

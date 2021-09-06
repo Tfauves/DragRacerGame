@@ -14,8 +14,9 @@ public class Car extends Vehicle{
 
     public void actionRatio() {
         Random acceleration = new Random();
-        int maxSpeedJump = 6;
+        int maxSpeedJump = 10;
         int minSpeedJump = 1;
+
         accelRatio = acceleration.nextInt(maxSpeedJump) + minSpeedJump;
     }
 
@@ -33,7 +34,7 @@ public class Car extends Vehicle{
         if (getEngine().getIsOperating() && speedometer < getMaxSpeed()) {
             speedometer += accelRatio;
             distanceTraveled += speedometer;
-            time = distanceTraveled / accelRatio;
+            time += distanceTraveled;
         }
         if (speedometer == getMaxSpeed()) {
             System.out.println("Traveling at max speed");
@@ -73,11 +74,7 @@ public class Car extends Vehicle{
     }
 
     public String toString() {
-        return "| Type: " + getType() + " | Engine: " + getEngine() + " | Max Speed: " + getMaxSpeed() + " |";
-
+        return "| Type: " + getType() + " | Engine: " + getEngine() + " | Max Speed: " + getMaxSpeed() + "mps |";
     }
 
-    public int getAccelRatio() {
-        return accelRatio;
-    }
 }

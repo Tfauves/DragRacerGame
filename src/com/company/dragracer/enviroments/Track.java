@@ -17,7 +17,7 @@ public class Track {
     }
 
     public String toString() {
-        String outPut = "| Track Selected || Level Of Difficulty: " + lvlOfDifficulty + " | Length: " + length + "m | Hazard: " + hazard + " |";
+        String outPut = "| Track Selected || Level Of Difficulty: " + lvlOfDifficulty + " | Length: " + length + "m | Hazard: " + hazard.getType() + " |";
         return outPut;
     }
 }

@@ -16,4 +16,8 @@ public abstract class Engine implements Engines {
         return isOperating;
     }
 
+    public int getHorsePower() {
+        return horsePower;
+    }
+
 }

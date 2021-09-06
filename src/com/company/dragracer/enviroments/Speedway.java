@@ -63,15 +63,18 @@ public class Speedway {
     }
 
     public void racePrompt(Vehicle playerVehicle) {
+        boolean isRaceStarted = false;
+        do {
         System.out.println("Press (s) to start your engine");
-        String userInput = Garage.scanner.next();
-        // TODO: 9/5/2021 error checking 
-        if (userInput.equals("s")) {
-            playerVehicle.start();
-            playerVehicle.setDistanceToFinish(newTrack.length);
-        } else {
-            System.out.println("Please start your vehicle to begin driving.");
-        }
+            String userInput = Garage.scanner.next();
+            if (userInput.equals("s")) {
+                playerVehicle.start();
+                isRaceStarted = true;
+                playerVehicle.setDistanceToFinish(newTrack.length);
+            } else {
+                System.out.println("Please start your vehicle to begin driving.");
+            }
+        } while(!isRaceStarted);
     }
 
     public void race(Vehicle playerVehicle) {
@@ -105,7 +108,9 @@ public class Speedway {
     public void finishLine(Vehicle playerCar) {
         int finishApproach = 5;
         int finishLine = playerCar.getDistanceToFinish();
-
+        if (playerCar.getDistanceTraveled() >= finishLine) {
+            System.out.println("End of race distance.");
+        }
     }
 }
 
