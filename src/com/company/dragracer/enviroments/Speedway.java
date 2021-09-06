@@ -8,10 +8,10 @@ public class Speedway {
     Track newTrack;
 
     private final String[] TRACK_LIST = new String[]{
-            "1. | Difficulty: Noob | Distance to finish: 200 meters | Hazard: None |",
+            "1. | Difficulty: Noob | Distance to finish: 200 meters | Hazard: Gravel Patch |",
             "2. | Difficulty: Beginner | Distance to finish: 400 meters | Hazard: Watery Lake |",
-            "3. | Difficulty: Seasoned | Distance to finish: 600 meters | Hazard: Flaming Wall Of Hay",
-            "4. | Difficulty: Pro | Distance to finish: 800 meters | Hazard: Super Hard Brick Wall",
+            "3. | Difficulty: Seasoned | Distance to finish: 600 meters | Hazard: Flaming Wall Of Hay |",
+            "4. | Difficulty: Pro | Distance to finish: 800 meters | Hazard: Super Hard Brick Wall |",
             "5. | Exit |"
     };
 
@@ -50,10 +50,10 @@ public class Speedway {
 
     public void handleMenuSelection(int choice) {
         switch (choice) {
-            case 1 -> newTrack = new Track("Noob", 200, null);
-            case 2 -> newTrack = new Track("Beginner", 400, null);
-            case 3 -> newTrack = new Track("Seasoned", 400, null);
-            case 4 -> newTrack = new Track("Pro", 800, null);
+            case 1 -> newTrack = new Track("Noob", 200, new Hazard("Gravel Patch", 75, 1));
+            case 2 -> newTrack = new Track("Beginner", 400, new Hazard("Watery Lake", 50, 4));
+            case 3 -> newTrack = new Track("Seasoned", 400, new Hazard("Flaming Wall Of Hay", 25, 6));
+            case 4 -> newTrack = new Track("Pro", 800, new Hazard("Super Hard Brick Wall", 10,10));
             default -> {
                 System.out.println("error...");
                 newTrack = null;
@@ -105,15 +105,7 @@ public class Speedway {
     public void finishLine(Vehicle playerCar) {
         int finishApproach = 5;
         int finishLine = playerCar.getDistanceToFinish();
-        if (playerCar.getDistanceTraveled() < finishLine - finishApproach) {
-            System.out.println("approaching the finish line");
-        }
-        if (playerCar.getDistanceTraveled() == finishLine) {
-            System.out.println("at finish line ");
-        }
-        if (playerCar.getDistanceTraveled() > finishLine + finishApproach) {
-            System.out.println("crossed over finish line");
-        }
+
     }
 }
 
