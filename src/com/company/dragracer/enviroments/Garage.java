@@ -22,7 +22,6 @@ public class Garage {
             "1. | Type: V6 gas | Horse Power: 205 |",
             "2. | Type: I6 gas | Horse Power: 394 |",
             "3. | Quit |"
-
     };
 
     public void displayOptions (String prompt, String[] options) {
@@ -31,7 +30,7 @@ public class Garage {
         }
     }
 
-    public void start() {
+    public void selectCar() {
         boolean isActive = true;
         while (isActive) {
             displayOptions(MENU_PROMPT, CAR_LIST);
@@ -55,9 +54,9 @@ public class Garage {
                 System.out.println("error...");
                 newEngine = null;
             }
-
         }
         playerCar.setEngine(newEngine);
+        System.out.println();
     }
 
     public static int getInt(int min, int max, String prompt) {
@@ -83,6 +82,7 @@ public class Garage {
         }
         selectEngine();
         System.out.println("| Your car |" + playerCar);
+        System.out.println();
     }
 
     public Car getPlayerCar() {
