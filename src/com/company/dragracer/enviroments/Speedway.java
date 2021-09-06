@@ -99,6 +99,12 @@ public class Speedway {
         }
     }
 
+    public void finishRace(Vehicle playerCar) {
+        int finishLine = playerCar.getDistanceTraveled() - playerCar.getDistanceToFinish();
+
+
+    }
+
     // TODO: 9/5/2021 define end of the race. 
 
 

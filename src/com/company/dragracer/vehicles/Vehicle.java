@@ -53,4 +53,12 @@ public abstract class Vehicle {
     public void setDistanceToFinish(int distanceToFinish) {
         this.distanceToFinish = distanceToFinish;
     }
+
+    public int getDistanceToFinish() {
+        return distanceToFinish;
+    }
+
+    public int getDistanceTraveled() {
+        return distanceTraveled;
+    }
 }
