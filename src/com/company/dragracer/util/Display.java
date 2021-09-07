@@ -12,7 +12,7 @@ public class Display {
     public static void displayWelcome(String prompt, String [] welcomeMenu) {
         System.out.println("\n" + prompt);
         for (String option : welcomeMenu) {
-            System.out.println("\n" + option);
+            System.out.println(option);
         }
     }
 
