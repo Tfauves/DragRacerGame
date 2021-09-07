@@ -1,5 +1,6 @@
 package com.company.dragracer.enviroments;
 
+import com.company.dragracer.util.Color;
 import com.company.dragracer.util.Display;
 import com.company.dragracer.vehicles.Vehicle;
 
@@ -69,7 +70,7 @@ public class Speedway {
     public void racePrompt(Vehicle playerVehicle) {
         boolean isRaceStarted = false;
         do {
-        System.out.println("Press (s) to start your engine and begin race.");
+        System.out.println("Press" + Color.GREEN + " (s) " +  Color.RESET + "to start your engine and begin race.");
             String userInput = Garage.scanner.next();
             if (userInput.equals("s")) {
                 playerVehicle.start();
@@ -120,13 +121,16 @@ public class Speedway {
             System.out.println("Perfect Stop\n50pts awarded.");
             System.out.println("Your race results: Distance of Race: " + playerVehicle.getDistanceToFinish() + " Distance Traveled: " + playerVehicle.getDistanceTraveled() + " Time: " + playerVehicle.getTime() + " Points: ");
 
-        } else if (playerVehicle.getDistanceTraveled() > playerVehicle.getDistanceToFinish() &&
+        }
+        else if (playerVehicle.getDistanceTraveled() > playerVehicle.getDistanceToFinish() &&
                 playerVehicle.getDistanceTraveled() < newTrack.hazard.getDistanceFromFinish() &&
                 playerVehicle.getSpeedometer() == 0) {
             System.out.println("Not a bad stop\n 20pts awarded");
-        } else if (playerVehicle.getDistanceTraveled() > playerVehicle.getDistanceToFinish() && playerVehicle.getDistanceTraveled() >= newTrack.hazard.getDistanceFromFinish()) {
+        }
+        else if (playerVehicle.getDistanceTraveled() > playerVehicle.getDistanceToFinish() && playerVehicle.getDistanceTraveled() >= newTrack.hazard.getDistanceFromFinish()) {
             System.out.println("Bruh!! You failed to stop and hit something... No points!! ");
-        } else if (playerVehicle.getDistanceTraveled() < playerVehicle.getDistanceToFinish() && playerVehicle.getSpeedometer() == 0) {
+        }
+        else if (playerVehicle.getDistanceTraveled() < playerVehicle.getDistanceToFinish() && playerVehicle.getSpeedometer() == 0) {
             System.out.println("You are not at the finish line yet, don't stop...\nIf you wish to quit quitter use the (e) for exit command.");
         }
 

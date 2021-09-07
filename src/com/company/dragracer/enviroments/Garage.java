@@ -47,22 +47,31 @@ public class Garage {
     }
 
     private void selectEngine() {
-        System.out.println("-----------------------------------------------------------------");
-        System.out.println("                         Engine");
-        System.out.println("-----------------------------------------------------------------");
-        displayOptions(SELECT_ENGINE_PROMPT, ENGINE_LIST);
-        int choice = getInt(1, ENGINE_LIST.length, SELECT_ENGINE_PROMPT);
-        CarEngine newEngine;
-        switch (choice) {
-            case 1 -> newEngine = new CarEngine(205, "V6 gas", false);
-            case 2 -> newEngine =  new CarEngine(394, "in6 gas", false) ;
-            default -> {
-                System.out.println("error...");
-                newEngine = null;
+        boolean isVaildSelection = false;
+        while(!isVaildSelection) {
+            System.out.println("-----------------------------------------------------------------");
+            System.out.println("                         Engine");
+            System.out.println("-----------------------------------------------------------------");
+            displayOptions(SELECT_ENGINE_PROMPT, ENGINE_LIST);
+            int choice = getInt(1, ENGINE_LIST.length, SELECT_ENGINE_PROMPT);
+            CarEngine newEngine;
+            switch (choice) {
+                case 1 -> {
+                    newEngine = new CarEngine(205, "V6 gas", false);
+                    isVaildSelection = true;
+                }
+                case 2 -> {
+                    newEngine = new CarEngine(394, "in6 gas", false);
+                    isVaildSelection = true;
+                }
+                default -> {
+                    System.out.println("error...");
+                    newEngine = null;
+                }
             }
+            playerCar.setEngine(newEngine);
+            System.out.println();
         }
-        playerCar.setEngine(newEngine);
-        System.out.println();
     }
 
     public static int getInt(int min, int max, String prompt) {
