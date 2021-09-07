@@ -44,6 +44,9 @@ public class Garage {
     }
 
     private void selectEngine() {
+        System.out.println("-----------------------------------------------------------------");
+        System.out.println("                         Engine");
+        System.out.println("-----------------------------------------------------------------");
         displayOptions(SELECT_ENGINE_PROMPT, ENGINE_LIST);
         int choice = getInt(1, ENGINE_LIST.length, SELECT_ENGINE_PROMPT);
         CarEngine newEngine;
