@@ -118,13 +118,12 @@ public class Speedway {
     //Award min pts for stopping less than 20 meters over the finish line.
     //Hit hazard no pts awarded.
     public void finishLine(Vehicle playerCar) {
-        int finishLineDifference = playerCar.getDistanceToFinish() - playerCar.getDistanceTraveled();
-//        if (playerCar.getDistanceTraveled() == finishLine && playerCar.getSpeedometer() == 0) {
-//            System.out.println("Perfect Stop\n 100pts awarded.");
-//        }
-//        if (playerCar.getDistanceToFinish() - playerCar.getDistanceTraveled() <= 0) {
-//            System.out.println("at the finish stop");
-//        }
+
+        if (playerCar.getDistanceToFinish() == playerCar.getDistanceTraveled() && playerCar.getSpeedometer() == 0) {
+            System.out.println("Perfect Stop\n 50pts awarded.");
+        } else if (playerCar.getDistanceTraveled() > playerCar.getDistanceToFinish() && playerCar.getDistanceTraveled() < newTrack.hazard.getDistanceFromFinish()) {
+            System.out.println("Not a bad stop\n 20pts awarded");
+        }
 
     }
 }
