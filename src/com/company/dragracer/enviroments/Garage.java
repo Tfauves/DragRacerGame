@@ -14,7 +14,7 @@ public class Garage {
 
     private final String[] CAR_LIST = new String[] {
             "1. | Type: Subaru Impreza WRX | Max Speed: 170 mps |",
-            "2. | Volkswagen Golf/GTI  | Max Speed: 155 mps |",
+            "2. | Type: Volkswagen Golf/GTI | Max Speed: 155 mps |",
             "3. | Quit |"
     };
 

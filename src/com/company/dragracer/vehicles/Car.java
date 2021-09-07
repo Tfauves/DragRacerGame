@@ -28,6 +28,7 @@ public class Car extends Vehicle{
         getEngine().off();
     }
 
+    // TODO: 9/6/2021 all this math is bugged. 
     public void accelerate() {
         actionRatio();
         System.out.println("Accelerating...");
