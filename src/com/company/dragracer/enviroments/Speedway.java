@@ -24,6 +24,9 @@ public class Speedway {
     public void selectTrack() {
         boolean isActive = true;
         while (isActive) {
+            System.out.println("-----------------------------------------------------------------");
+            System.out.println("                         Tracks");
+            System.out.println("-----------------------------------------------------------------");
             displayTrackOptions(MENU_PROMPT, TRACK_LIST);
             int choice = getInt(1, 5, SELECT_TRACK_PROMPT);
             if (choice == 5) {
