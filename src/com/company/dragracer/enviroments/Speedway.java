@@ -1,5 +1,6 @@
 package com.company.dragracer.enviroments;
 
+import com.company.dragracer.util.Display;
 import com.company.dragracer.vehicles.Vehicle;
 
 public class Speedway {
@@ -97,7 +98,7 @@ public class Speedway {
                         System.out.println("The race is over...heading back to garage");
                         playerVehicle.displayDash();
                         isActive = false;
-                        System.exit(0);
+                        Display.titleScreen();
                     }
                     default -> System.out.println("Not Valid");
                 }
