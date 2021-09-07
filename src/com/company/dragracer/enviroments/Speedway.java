@@ -65,7 +65,7 @@ public class Speedway {
     public void racePrompt(Vehicle playerVehicle) {
         boolean isRaceStarted = false;
         do {
-        System.out.println("Press (s) to start your engine");
+        System.out.println("Press (s) to start your engine and begin race.");
             String userInput = Garage.scanner.next();
             if (userInput.equals("s")) {
                 playerVehicle.start();
@@ -105,12 +105,18 @@ public class Speedway {
     }
 
     // TODO: 9/5/2021 define end of the race.
+    //Award max pts for stopping car at finish line.
+    //Award high pts for stopping less than 10 meters over the finish line.
+    //Award med pts for stopping less than 15 meters over the finish line.
+    //Award min pts for stopping less than 20 meters over the finish line.
+    //Hit hazard no pts awarded.
     public void finishLine(Vehicle playerCar) {
-        int finishApproach = 5;
         int finishLine = playerCar.getDistanceToFinish();
-        if (playerCar.getDistanceTraveled() >= finishLine) {
-            System.out.println("End of race distance.");
+        if (playerCar.getDistanceTraveled() == finishLine && playerCar.getSpeedometer() == 0) {
+            System.out.println("Perfect Stop\n 100pts awarded.");
         }
+
     }
+
 }
 

@@ -61,4 +61,8 @@ public abstract class Vehicle {
     public int getDistanceTraveled() {
         return distanceTraveled;
     }
+
+    public int getSpeedometer() {
+        return speedometer;
+    }
 }
