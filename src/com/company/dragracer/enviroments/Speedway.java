@@ -92,7 +92,11 @@ public class Speedway {
                     case "a" -> playerVehicle.accelerate();
                     case "b" -> playerVehicle.brake();
                     case "c" -> playerVehicle.coast();
-                    case "s" -> playerVehicle.stop();
+                    case "s" -> {
+                        playerVehicle.stop();
+                        System.out.println("Your race results: Distance of Race: " + playerVehicle.getDistanceToFinish() + " Distance Traveled: " + playerVehicle.getDistanceTraveled() + " Time: " + playerVehicle.getTime() + " Points: ");
+                        isActive = false;
+                    }
                     case "e" -> {
                         System.out.println("The race is over...heading back to garage");
                         playerVehicle.displayDash();
@@ -114,12 +118,14 @@ public class Speedway {
     //Award min pts for stopping less than 20 meters over the finish line.
     //Hit hazard no pts awarded.
     public void finishLine(Vehicle playerCar) {
-        int finishLine = playerCar.getDistanceToFinish();
-        if (playerCar.getDistanceTraveled() == finishLine && playerCar.getSpeedometer() == 0) {
-            System.out.println("Perfect Stop\n 100pts awarded.");
-        }
+        int finishLineDifference = playerCar.getDistanceToFinish() - playerCar.getDistanceTraveled();
+//        if (playerCar.getDistanceTraveled() == finishLine && playerCar.getSpeedometer() == 0) {
+//            System.out.println("Perfect Stop\n 100pts awarded.");
+//        }
+//        if (playerCar.getDistanceToFinish() - playerCar.getDistanceTraveled() <= 0) {
+//            System.out.println("at the finish stop");
+//        }
 
     }
-
 }
 

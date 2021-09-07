@@ -35,7 +35,7 @@ public class Car extends Vehicle{
         if (getEngine().getIsOperating() && getSpeedometer() < getMaxSpeed()) {
             speedometer = getSpeedometer() + accelRatio;
             distanceTraveled += getSpeedometer();
-            time += distanceTraveled;
+            time ++;
         }
         if (getSpeedometer() == getMaxSpeed()) {
             System.out.println("Traveling at max speed");
@@ -71,7 +71,6 @@ public class Car extends Vehicle{
         System.out.println("Vehicle comes to a skidding stop...");
         speedometer = 0;
         time++;
-        displayDash();
     }
 
     public String toString() {

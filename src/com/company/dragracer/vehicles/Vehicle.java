@@ -65,4 +65,8 @@ public abstract class Vehicle {
     public int getSpeedometer() {
         return speedometer;
     }
+
+    public int getTime() {
+        return time;
+    }
 }
