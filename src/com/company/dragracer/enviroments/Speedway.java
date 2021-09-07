@@ -94,7 +94,6 @@ public class Speedway {
                     case "c" -> playerVehicle.coast();
                     case "s" -> {
                         playerVehicle.stop();
-                        System.out.println("Your race results: Distance of Race: " + playerVehicle.getDistanceToFinish() + " Distance Traveled: " + playerVehicle.getDistanceTraveled() + " Time: " + playerVehicle.getTime() + " Points: ");
                         isActive = false;
                     }
                     case "e" -> {
@@ -107,8 +106,8 @@ public class Speedway {
                 }
 
             }
-            finishLine(playerVehicle);
         }
+        finishLine(playerVehicle);
     }
 
     // TODO: 9/5/2021 define end of the race.
@@ -117,11 +116,12 @@ public class Speedway {
     //Award med pts for stopping less than 15 meters over the finish line.
     //Award min pts for stopping less than 20 meters over the finish line.
     //Hit hazard no pts awarded.
-    public void finishLine(Vehicle playerCar) {
+    public void finishLine(Vehicle playerVehicle) {
+        if (playerVehicle.getDistanceToFinish() == playerVehicle.getDistanceTraveled() && playerVehicle.getSpeedometer() == 0) {
+            System.out.println("Perfect Stop\n50pts awarded.");
+            System.out.println("Your race results: Distance of Race: " + playerVehicle.getDistanceToFinish() + " Distance Traveled: " + playerVehicle.getDistanceTraveled() + " Time: " + playerVehicle.getTime() + " Points: ");
 
-        if (playerCar.getDistanceToFinish() == playerCar.getDistanceTraveled() && playerCar.getSpeedometer() == 0) {
-            System.out.println("Perfect Stop\n 50pts awarded.");
-        } else if (playerCar.getDistanceTraveled() > playerCar.getDistanceToFinish() && playerCar.getDistanceTraveled() < newTrack.hazard.getDistanceFromFinish()) {
+        } else if (playerVehicle.getDistanceTraveled() > playerVehicle.getDistanceToFinish() && playerVehicle.getDistanceTraveled() < newTrack.hazard.getDistanceFromFinish()) {
             System.out.println("Not a bad stop\n 20pts awarded");
         }
 
