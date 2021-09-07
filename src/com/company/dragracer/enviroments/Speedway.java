@@ -92,10 +92,7 @@ public class Speedway {
                     case "a" -> playerVehicle.accelerate();
                     case "b" -> playerVehicle.brake();
                     case "c" -> playerVehicle.coast();
-                    case "s" -> {
-                        playerVehicle.stop();
-                        isActive = false;
-                    }
+                    case "s" -> playerVehicle.stop();
                     case "e" -> {
                         System.out.println("The race is over...heading back to garage");
                         playerVehicle.displayDash();
@@ -106,10 +103,11 @@ public class Speedway {
                 }
 
             }
-        }
         finishLine(playerVehicle);
+        }
     }
 
+    // TODO: 9/7/2021 need exit to main menu or end race or title screen.
     // TODO: 9/5/2021 define end of the race.
     //Award max pts for stopping car at finish line.
     //Award high pts for stopping less than 10 meters over the finish line.
@@ -121,8 +119,14 @@ public class Speedway {
             System.out.println("Perfect Stop\n50pts awarded.");
             System.out.println("Your race results: Distance of Race: " + playerVehicle.getDistanceToFinish() + " Distance Traveled: " + playerVehicle.getDistanceTraveled() + " Time: " + playerVehicle.getTime() + " Points: ");
 
-        } else if (playerVehicle.getDistanceTraveled() > playerVehicle.getDistanceToFinish() && playerVehicle.getDistanceTraveled() < newTrack.hazard.getDistanceFromFinish()) {
+        } else if (playerVehicle.getDistanceTraveled() > playerVehicle.getDistanceToFinish() &&
+                playerVehicle.getDistanceTraveled() < newTrack.hazard.getDistanceFromFinish() &&
+                playerVehicle.getSpeedometer() == 0) {
             System.out.println("Not a bad stop\n 20pts awarded");
+        } else if (playerVehicle.getDistanceTraveled() > playerVehicle.getDistanceToFinish() && playerVehicle.getDistanceTraveled() >= newTrack.hazard.getDistanceFromFinish()) {
+            System.out.println("Bruh!! You failed to stop and hit something... No points!! ");
+        } else if (playerVehicle.getDistanceTraveled() < playerVehicle.getDistanceToFinish() && playerVehicle.getSpeedometer() == 0) {
+            System.out.println("You are not at the finish line yet, don't stop...\nIf you wish to quit quitter use the (e) for exit command.");
         }
 
     }
