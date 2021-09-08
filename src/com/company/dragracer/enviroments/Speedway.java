@@ -135,13 +135,17 @@ public class Speedway {
 //        }
         goodStop(playerVehicle);
         shortOfFinish(playerVehicle);
-//        hazardCollision(playerVehicle);
+        hazardCollision(playerVehicle);
         perfectStop(playerVehicle);
 
     }
 
-
-
+    public void hazardCollision(Vehicle playerVehicle) {
+        int finishDiff = playerVehicle.getDistanceTraveled() - playerVehicle.getDistanceToFinish();
+        if (finishDiff >= newTrack.hazard.getDistanceFromFinish()) {
+            System.out.println("Bruh!! You failed to stop and hit something... No points!! ");
+        }
+    }
 
     public void shortOfFinish(Vehicle playerVehicle) {
         if (playerVehicle.getDistanceTraveled() < playerVehicle.getDistanceToFinish() && playerVehicle.getSpeedometer() == 0) {
