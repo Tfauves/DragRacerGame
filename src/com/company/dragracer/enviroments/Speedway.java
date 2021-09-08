@@ -134,12 +134,20 @@ public class Speedway {
 //            System.out.println("You are not at the finish line yet, don't stop...\nIf you wish to quit quitter use the (e) for exit command.");
 //        }
         goodStop(playerVehicle);
-//        shortOfFinish(playerVehicle);
+        shortOfFinish(playerVehicle);
 //        hazardCollision(playerVehicle);
         perfectStop(playerVehicle);
 
     }
 
+
+
+
+    public void shortOfFinish(Vehicle playerVehicle) {
+        if (playerVehicle.getDistanceTraveled() < playerVehicle.getDistanceToFinish() && playerVehicle.getSpeedometer() == 0) {
+            System.out.println("You are not at the finish line yet, don't stop...\nIf you wish to quit quitter use the (e) for exit command.");
+        }
+    }
 
     public void goodStop(Vehicle playerVehicle) {
         if (playerVehicle.getDistanceTraveled() > playerVehicle.getDistanceToFinish() &&
