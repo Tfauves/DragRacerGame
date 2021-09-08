@@ -133,13 +133,21 @@ public class Speedway {
 //        else if (playerVehicle.getDistanceTraveled() < playerVehicle.getDistanceToFinish() && playerVehicle.getSpeedometer() == 0) {
 //            System.out.println("You are not at the finish line yet, don't stop...\nIf you wish to quit quitter use the (e) for exit command.");
 //        }
-//        goodStop(playerVehicle);
+        goodStop(playerVehicle);
 //        shortOfFinish(playerVehicle);
 //        hazardCollision(playerVehicle);
         perfectStop(playerVehicle);
 
     }
 
+
+    public void goodStop(Vehicle playerVehicle) {
+        if (playerVehicle.getDistanceTraveled() > playerVehicle.getDistanceToFinish() &&
+                playerVehicle.getDistanceTraveled() < newTrack.hazard.getDistanceFromFinish() &&
+                playerVehicle.getSpeedometer() == 0) {
+            System.out.println("Not a bad stop\n 20pts awarded");
+        }
+    }
 
     public void perfectStop(Vehicle playerVehicle) {
         if (playerVehicle.getDistanceToFinish() == playerVehicle.getDistanceTraveled() && playerVehicle.getSpeedometer() == 0) {
