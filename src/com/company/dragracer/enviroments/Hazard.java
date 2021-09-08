@@ -19,4 +19,6 @@ public class Hazard {
     public String getType() {
         return type;
     }
+
+
 }
