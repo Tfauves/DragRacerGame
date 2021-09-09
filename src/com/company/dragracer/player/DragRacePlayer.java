@@ -1,6 +1,8 @@
-package com.company.dragracer;
+package com.company.dragracer.player;
 
-public class DragRacePlayer implements Player{
+import com.company.dragracer.player.Player;
+
+public class DragRacePlayer implements Player {
     private String name;
     private int score;
     private boolean isActiveTurn;

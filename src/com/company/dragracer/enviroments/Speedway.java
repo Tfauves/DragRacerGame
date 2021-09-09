@@ -1,6 +1,5 @@
 package com.company.dragracer.enviroments;
 
-import com.company.dragracer.Game;
 import com.company.dragracer.util.Color;
 import com.company.dragracer.util.Display;
 import com.company.dragracer.util.UI;
@@ -139,7 +138,7 @@ public class Speedway {
     public void perfectStop(Vehicle playerVehicle) {
         if (playerVehicle.getDistanceToFinish() == playerVehicle.getDistanceTraveled() && playerVehicle.getSpeedometer() == 0) {
             System.out.println("Perfect Stop\n50pts awarded.");
-            System.out.println("Your race results: Distance of Race: " + playerVehicle.getDistanceToFinish() + " Distance Traveled: " + playerVehicle.getDistanceTraveled() + " Time: " + playerVehicle.getTime() + " Points: ");
+            System.out.println("Your race results: Distance of Race: " + playerVehicle.getDistanceToFinish() + "m Distance Traveled: " + playerVehicle.getDistanceTraveled() + " Time: " + playerVehicle.getTime() + " Points: ");
             System.exit(0);
         }
     }

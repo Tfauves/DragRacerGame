@@ -2,8 +2,8 @@ package com.company.dragracer;
 
 import com.company.dragracer.enviroments.Garage;
 import com.company.dragracer.enviroments.Speedway;
+import com.company.dragracer.player.Player;
 import com.company.dragracer.util.UI;
-import com.company.dragracer.vehicles.Vehicle;
 
 
 public class Game {
