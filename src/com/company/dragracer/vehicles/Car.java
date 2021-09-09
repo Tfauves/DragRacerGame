@@ -1,5 +1,7 @@
 package com.company.dragracer.vehicles;
 import com.company.dragracer.parts.CarEngine;
+import com.company.dragracer.parts.Engines;
+import com.company.dragracer.util.Display;
 
 import java.util.Random;
 
@@ -47,6 +49,7 @@ public class Car extends Vehicle{
             distanceTraveled += getSpeedometer();
             time++;
         }
+        Display.spaces();
         displayDash();
     }
 

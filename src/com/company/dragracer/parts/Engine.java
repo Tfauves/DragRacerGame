@@ -16,6 +16,15 @@ public abstract class Engine implements Engines {
         return isOperating;
     }
 
+    @Override
+    public void on() {
+        if (!isOperating) {
+            isOperating = true;
+            System.out.println("Engine is running");
+        }
+    }
+
+
     public int getHorsePower() {
         return horsePower;
     }

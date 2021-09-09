@@ -86,7 +86,7 @@ public class Speedway {
         String userInput;
         while (isActive) {
             if (playerVehicle.getEngine().getIsOperating()) {
-                System.out.println("Press (a) to accelerate, (b) to brake, (c) to coast, (s) to stop short, (e) end race and to return to garage");
+                System.out.println("SELECT\n(a) to accelerate,\n(b) to brake,\n(c) to coast,\n(s) to stop short,\n(e) end race and to return to garage");
                 userInput = Garage.scanner.next();
                 switch (userInput) {
                     case "a" -> playerVehicle.accelerate();
@@ -97,8 +97,7 @@ public class Speedway {
                         System.out.println("The race is over...heading back to garage");
                         playerVehicle.displayDash();
                         isActive = false;
-                        // TODO: 9/7/2021 this is not working quits after input
-                        Display.titleScreen();
+
                     }
                     default -> System.out.println("Not Valid");
                 }
