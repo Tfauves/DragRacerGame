@@ -54,24 +54,25 @@ public class Car extends Vehicle{
     }
 
     public void coast() {
-        System.out.println("Coasting...");
         speedometer = getSpeedometer() - coastRatio;
         distanceTraveled += coastRatio;
         time += coastRatio;
         Display.spaces();
+        System.out.println("Coasting...");
         displayDash();
     }
 
     public void brake() {
-        System.out.println("Braking...");
         speedometer = getSpeedometer() - brakeRatio;
         distanceTraveled += brakeRatio - coastRatio;
         time += brakeRatio;
         Display.spaces();
+        System.out.println("Braking...");
         displayDash();
     }
 
     public void stop() {
+        Display.spaces();
         System.out.println("Vehicle comes to a skidding stop...");
         speedometer = 0;
         time++;
