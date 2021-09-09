@@ -155,8 +155,7 @@ public class Speedway {
 
     public void goodStop(Vehicle playerVehicle) {
         if (playerVehicle.getDistanceTraveled() > playerVehicle.getDistanceToFinish() &&
-                playerVehicle.getDistanceTraveled() < newTrack.hazard.getDistanceFromFinish() &&
-                playerVehicle.getSpeedometer() == 0) {
+                playerVehicle.getDistanceTraveled() < newTrack.hazard.getDistanceFromFinish()) {
             System.out.println("Not a bad stop\n 20pts awarded");
         }
     }

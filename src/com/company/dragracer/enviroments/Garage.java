@@ -1,6 +1,7 @@
 package com.company.dragracer.enviroments;
 
 import com.company.dragracer.parts.CarEngine;
+import com.company.dragracer.util.Display;
 import com.company.dragracer.vehicles.Car;
 import java.util.Scanner;
 
@@ -31,6 +32,7 @@ public class Garage {
     }
 
     public void selectCar() {
+        Display.titleScreen();
         boolean isActive = true;
         while (isActive) {
             System.out.println("-----------------------------------------------------------------");
@@ -45,6 +47,7 @@ public class Garage {
             isActive = false;
         }
     }
+
 
     private void selectEngine() {
         boolean isVaildSelection = false;

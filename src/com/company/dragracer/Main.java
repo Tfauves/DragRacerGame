@@ -9,7 +9,6 @@ public class Main {
     public static void main(String[] args) {
         Garage garage = new Garage();
         Speedway speedway = new Speedway();
-        Display.titleScreen();
         garage.selectCar();
         speedway.selectTrack();
         speedway.race(garage.getPlayerCar());

@@ -1,34 +1,21 @@
 package com.company.dragracer.util;
 
-import com.company.dragracer.enviroments.Garage;
-
 public class Display {
-    private static final String WELCOME_PROMPT = "             Welcome To Drag Racer\n-------------------------------------------------------";
-
-    private static String[] welcomeMenu = new String[] {
-        "Press e to enter your garage.\nPress q to quit."
+    private static final String[] TITLE = new String[] {
+            "-----------------------------------------------------------------",
+            "                         Drag Racer",
+            "-----------------------------------------------------------------"
     };
 
-    public static void displayWelcome(String prompt, String [] welcomeMenu) {
-        System.out.println("\n" + prompt);
-        for (String option : welcomeMenu) {
-            System.out.println(option);
+
+    public static void displayWelcome(String[] title ) {
+        for (String words : title) {
+        System.out.println("\n" + words);
         }
     }
 
     public static void titleScreen() {
-        boolean isaActive = true;
-        while (isaActive) {
-            displayWelcome(WELCOME_PROMPT, welcomeMenu);
-            String userInput = Garage.scanner.next();
-            Garage.scanner.nextLine();
-            if (userInput.equals("e")) {
-                System.out.println("Build your car");
-                isaActive = false;
-            } else if (userInput.equals("q")) {
-                System.exit(0);
-            }
-        }
+            displayWelcome(TITLE);
     }
 
 }
