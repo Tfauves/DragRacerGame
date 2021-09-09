@@ -19,6 +19,12 @@ public class Display {
         System.out.println("-----------------------------------------------------------------");
     }
 
+    public static void displayTrackTitle() {
+        System.out.println("-----------------------------------------------------------------");
+        System.out.println("                         Tracks");
+        System.out.println("-----------------------------------------------------------------");
+    }
+
 
     public static void displayWelcome(String[] title ) {
         for (String words : title) {
