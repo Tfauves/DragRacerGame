@@ -2,6 +2,7 @@ package com.company.dragracer.enviroments;
 
 import com.company.dragracer.util.Color;
 import com.company.dragracer.util.Display;
+import com.company.dragracer.util.UI;
 import com.company.dragracer.vehicles.Vehicle;
 
 public class Speedway {
@@ -40,7 +41,7 @@ public class Speedway {
         int option = min - 1;
         do {
             System.out.println(prompt);
-            String input = Garage.scanner.nextLine();
+            String input = UI.scanner.nextLine();
             try {
                 option = Integer.parseInt(input);
             } catch (NumberFormatException err) {
@@ -69,7 +70,7 @@ public class Speedway {
         boolean isRaceStarted = false;
         do {
         System.out.println("Press" + Color.GREEN + " (s) " +  Color.RESET + "to start your engine and begin race.");
-            String userInput = Garage.scanner.next();
+            String userInput = UI.scanner.next();
             if (userInput.equals("s")) {
                 playerVehicle.start();
                 isRaceStarted = true;
@@ -87,7 +88,7 @@ public class Speedway {
         while (isActive) {
             if (playerVehicle.getEngine().getIsOperating()) {
                 System.out.println("SELECT\n(a) to accelerate,\n(b) to brake,\n(c) to coast,\n(s) to stop short,\n(e) end race and to return to garage");
-                userInput = Garage.scanner.next();
+                userInput = UI.scanner.next();
                 switch (userInput) {
                     case "a" -> playerVehicle.accelerate();
                     case "b" -> playerVehicle.brake();
@@ -140,7 +141,11 @@ public class Speedway {
         }
     }
 
-    public void endOfRace() {
+    public void endOfRace(Vehicle playerVehicle) {
+        playerVehicle.displayDash();
+        System.out.println("Race Again? y/n");
+
+
 
     }
 

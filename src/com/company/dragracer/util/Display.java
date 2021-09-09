@@ -49,8 +49,8 @@ public class Display {
 
     public static void startBtn() {
         System.out.println("(e) to enter:");
-        String userInput = Garage.scanner.next();
-        Garage.scanner.nextLine();
+        String userInput = UI.scanner.next();
+        UI.scanner.nextLine();
         if (userInput.equals("e")) {
             spaces();
         }

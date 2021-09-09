@@ -2,11 +2,10 @@ package com.company.dragracer.enviroments;
 
 import com.company.dragracer.parts.CarEngine;
 import com.company.dragracer.util.Display;
+import com.company.dragracer.util.UI;
 import com.company.dragracer.vehicles.Car;
-import java.util.Scanner;
 
 public class Garage {
-    public static final Scanner scanner = new Scanner(System.in);
     private Car playerCar;
     private final static String SELECT_CAR_PROMPT = "Enter car selection";
     private final static String SELECT_ENGINE_PROMPT = "Enter engine selection";
@@ -74,7 +73,7 @@ public class Garage {
         int option = min - 1;
         do {
             System.out.println(prompt);
-            String input = scanner.nextLine();
+            String input = UI.scanner.nextLine();
             try{
                 option = Integer.parseInt(input);
             } catch (NumberFormatException err) {
