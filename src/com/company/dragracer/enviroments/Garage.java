@@ -11,8 +11,6 @@ public class Garage {
     private final static String SELECT_CAR_PROMPT = "Enter car selection";
     private final static String SELECT_ENGINE_PROMPT = "Enter engine selection";
     private final static String MENU_PROMPT = "Make your selection";
-
-
     private final String[] CAR_LIST = new String[] {
             "1. | Type: Subaru Impreza WRX | Max Speed: 170 mps |",
             "2. | Type: Volkswagen Golf/GTI | Max Speed: 155 mps |",
@@ -35,7 +33,7 @@ public class Garage {
         Display.titleScreen();
         boolean isActive = true;
         while (isActive) {
-            Display.displayVehicleMenu();
+            Display.displayVehicleTitle();
             displayOptions(MENU_PROMPT, CAR_LIST);
             int choice = getInt(1, 3, SELECT_CAR_PROMPT);
             if (choice == 3) {
@@ -46,13 +44,10 @@ public class Garage {
         }
     }
 
-
     private void selectEngine() {
         boolean isVaildSelection = false;
         while(!isVaildSelection) {
-            System.out.println("-----------------------------------------------------------------");
-            System.out.println("                         Engine");
-            System.out.println("-----------------------------------------------------------------");
+            Display.displayEngineTitle();
             displayOptions(SELECT_ENGINE_PROMPT, ENGINE_LIST);
             int choice = getInt(1, ENGINE_LIST.length, SELECT_ENGINE_PROMPT);
             CarEngine newEngine;

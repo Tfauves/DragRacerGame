@@ -7,9 +7,15 @@ public class Display {
             "-----------------------------------------------------------------"
     };
 
-    public static void displayVehicleMenu() {
+    public static void displayVehicleTitle() {
         System.out.println("-----------------------------------------------------------------");
         System.out.println("                         Vehicle");
+        System.out.println("-----------------------------------------------------------------");
+    }
+
+    public static void displayEngineTitle() {
+        System.out.println("-----------------------------------------------------------------");
+        System.out.println("                         Engine");
         System.out.println("-----------------------------------------------------------------");
     }
 
