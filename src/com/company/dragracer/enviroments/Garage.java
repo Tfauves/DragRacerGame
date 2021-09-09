@@ -91,7 +91,9 @@ public class Garage {
             case 3 -> System.exit(0);
             default -> System.out.println("Invalid number received...");
         }
+        Display.spaces();
         selectEngine();
+        Display.spaces();
         System.out.println("| Your car |" + playerCar);
         System.out.println();
     }
