@@ -140,5 +140,9 @@ public class Speedway {
         }
     }
 
+    public void endOfRace() {
+
+    }
+
 }
 
