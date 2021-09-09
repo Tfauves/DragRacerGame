@@ -35,9 +35,7 @@ public class Garage {
         Display.titleScreen();
         boolean isActive = true;
         while (isActive) {
-            System.out.println("-----------------------------------------------------------------");
-            System.out.println("                         Vehicle");
-            System.out.println("-----------------------------------------------------------------");
+            Display.displayVehicleMenu();
             displayOptions(MENU_PROMPT, CAR_LIST);
             int choice = getInt(1, 3, SELECT_CAR_PROMPT);
             if (choice == 3) {

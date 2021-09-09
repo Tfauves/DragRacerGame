@@ -7,6 +7,12 @@ public class Display {
             "-----------------------------------------------------------------"
     };
 
+    public static void displayVehicleMenu() {
+        System.out.println("-----------------------------------------------------------------");
+        System.out.println("                         Vehicle");
+        System.out.println("-----------------------------------------------------------------");
+    }
+
 
     public static void displayWelcome(String[] title ) {
         for (String words : title) {
