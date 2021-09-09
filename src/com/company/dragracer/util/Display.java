@@ -11,19 +11,19 @@ public class Display {
 
     public static void displayVehicleTitle() {
         System.out.println("-----------------------------------------------------------------");
-        System.out.println("                         Vehicle");
+        System.out.println("                     Select Vehicle");
         System.out.println("-----------------------------------------------------------------");
     }
 
     public static void displayEngineTitle() {
         System.out.println("-----------------------------------------------------------------");
-        System.out.println("                         Engine");
+        System.out.println("                      Select Engine");
         System.out.println("-----------------------------------------------------------------");
     }
 
     public static void displayTrackTitle() {
         System.out.println("-----------------------------------------------------------------");
-        System.out.println("                         Tracks");
+        System.out.println("                      Select Track");
         System.out.println("-----------------------------------------------------------------");
     }
 
@@ -50,9 +50,9 @@ public class Display {
     public static void startBtn() {
         System.out.println("(e) to enter:");
         String userInput = Garage.scanner.next();
+        Garage.scanner.nextLine();
         if (userInput.equals("e")) {
-            System.out.println("Build your Vehicle");
-
+            spaces();
         }
     }
 }
