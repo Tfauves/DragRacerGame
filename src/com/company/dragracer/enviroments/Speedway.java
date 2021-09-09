@@ -61,6 +61,7 @@ public class Speedway {
                 newTrack = null;
             }
         }
+        Display.spaces();
         System.out.println(newTrack.toString());
     }
 
