@@ -141,23 +141,5 @@ public class Speedway {
         }
     }
 
-    public void endOfRace(Vehicle playerVehicle) {
-        boolean isActive = true;
-        playerVehicle.displayDash();
-        while (isActive) {
-            System.out.println("Race Again? y/n");
-            String userInput = UI.scanner.nextLine();
-            switch (userInput) {
-                case "y":
-
-                    break;
-                case "n":
-                    System.out.println("Thanks for playing...");
-                    System.exit(0);
-
-            }
-        }
-    }
-
 }
 

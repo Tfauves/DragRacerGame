@@ -32,7 +32,6 @@ public class Car extends Vehicle{
 
     public void accelerate() {
         actionRatio();
-        System.out.println("Accelerating...");
         if (getEngine().getIsOperating() && getSpeedometer() < getMaxSpeed()) {
             speedometer = getSpeedometer() + accelRatio;
             distanceTraveled += getSpeedometer();
@@ -50,6 +49,7 @@ public class Car extends Vehicle{
             time++;
         }
         Display.spaces();
+        System.out.println("Accelerating...");
         displayDash();
     }
 
@@ -58,6 +58,7 @@ public class Car extends Vehicle{
         speedometer = getSpeedometer() - coastRatio;
         distanceTraveled += coastRatio;
         time += coastRatio;
+        Display.spaces();
         displayDash();
     }
 
@@ -66,6 +67,7 @@ public class Car extends Vehicle{
         speedometer = getSpeedometer() - brakeRatio;
         distanceTraveled += brakeRatio - coastRatio;
         time += brakeRatio;
+        Display.spaces();
         displayDash();
     }
 
