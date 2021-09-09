@@ -28,7 +28,7 @@ public class Display {
 
     public static void displayWelcome(String[] title ) {
         for (String words : title) {
-        System.out.println("\n" + words);
+        System.out.println(words);
         }
     }
 
@@ -36,4 +36,16 @@ public class Display {
             displayWelcome(TITLE);
     }
 
+    public static void spaces() {
+        int spaceCounter = 0;
+        while (spaceCounter < 33) {
+            System.out.println();
+            spaceCounter++;
+        }
+    }
+
+    public static void startBtn() {
+        System.out.println("(e) to enter:");
+
+    }
 }
