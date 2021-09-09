@@ -1,5 +1,7 @@
 package com.company.dragracer.util;
 
+import com.company.dragracer.enviroments.Garage;
+
 public class Display {
     private static final String[] TITLE = new String[] {
             "-----------------------------------------------------------------",
@@ -30,6 +32,7 @@ public class Display {
         for (String words : title) {
         System.out.println(words);
         }
+        startBtn();
     }
 
     public static void titleScreen() {
@@ -46,6 +49,10 @@ public class Display {
 
     public static void startBtn() {
         System.out.println("(e) to enter:");
+        String userInput = Garage.scanner.next();
+        if (userInput.equals("e")) {
+            System.out.println("Build your Vehicle");
 
+        }
     }
 }
