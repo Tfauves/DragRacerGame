@@ -1,5 +1,6 @@
 package com.company.dragracer.enviroments;
 
+import com.company.dragracer.Game;
 import com.company.dragracer.util.Color;
 import com.company.dragracer.util.Display;
 import com.company.dragracer.util.UI;
@@ -98,7 +99,6 @@ public class Speedway {
                         System.out.println("The race is over...heading back to garage");
                         playerVehicle.displayDash();
                         isActive = false;
-
                     }
                     default -> System.out.println("Not Valid");
                 }
@@ -142,11 +142,21 @@ public class Speedway {
     }
 
     public void endOfRace(Vehicle playerVehicle) {
+        boolean isActive = true;
         playerVehicle.displayDash();
-        System.out.println("Race Again? y/n");
+        while (isActive) {
+            System.out.println("Race Again? y/n");
+            String userInput = UI.scanner.nextLine();
+            switch (userInput) {
+                case "y":
 
+                    break;
+                case "n":
+                    System.out.println("Thanks for playing...");
+                    System.exit(0);
 
-
+            }
+        }
     }
 
 }
