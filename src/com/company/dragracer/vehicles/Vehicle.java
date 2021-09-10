@@ -1,9 +1,10 @@
 package com.company.dragracer.vehicles;
 
 import com.company.dragracer.parts.Engine;
+import com.company.dragracer.parts.Engines;
 
 public abstract class Vehicle {
-    private Engine engine;
+    private Engines engine;
     private int maxSpeed;
     protected int speedometer;
     private String type;
@@ -42,7 +43,7 @@ public abstract class Vehicle {
         return type;
     }
 
-    public Engine getEngine() {
+    public Engines getEngine() {
         return engine;
     }
 
