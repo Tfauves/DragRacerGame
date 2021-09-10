@@ -6,20 +6,21 @@ import com.company.dragracer.util.Display;
 import java.util.Random;
 
 public class Car extends Vehicle{
-    private int brakeRatio = 3;
-    private int coastRatio = 2;
-    private int accelRatio;
+    private  final int BRAKE_RATIO = 2;
+    private final int COAST_RATIO = 3;
+    private final int ACCEL_RATIO = 5;
+    private int actionApplied;
 
     public Car(CarEngine engine, int maxSpeed, int speedometer, int distanceTraveled, int distanceToFinish, int time, String type) {
         super(engine, maxSpeed, speedometer, distanceTraveled, distanceToFinish, time, type);
     }
 
-    public void actionRatio() {
+    public void actionRatio(int multiplier) {
         Random acceleration = new Random();
         int maxSpeedJump = 10;
         int minSpeedJump = 1;
 
-        accelRatio = acceleration.nextInt(maxSpeedJump) + minSpeedJump;
+        actionApplied = acceleration.nextInt(maxSpeedJump) + minSpeedJump * multiplier;
     }
 
     public void start() {
@@ -31,9 +32,9 @@ public class Car extends Vehicle{
     }
 
     public void accelerate() {
-        actionRatio();
+        actionRatio(ACCEL_RATIO);
         if (getEngine().getIsOperating() && getSpeedometer() < getMaxSpeed()) {
-            speedometer = getSpeedometer() + accelRatio;
+            speedometer = getSpeedometer() + actionApplied;
             distanceTraveled += getSpeedometer();
             time ++;
         }
@@ -54,18 +55,18 @@ public class Car extends Vehicle{
     }
 
     public void coast() {
-        speedometer = getSpeedometer() - coastRatio;
-        distanceTraveled += coastRatio;
-        time += coastRatio;
+        speedometer = getSpeedometer() - COAST_RATIO;
+        distanceTraveled += COAST_RATIO;
+        time += COAST_RATIO;
         Display.spaces();
         System.out.println("Coasting...");
         displayDash();
     }
 
     public void brake() {
-        speedometer = getSpeedometer() - brakeRatio;
-        distanceTraveled += brakeRatio - coastRatio;
-        time += brakeRatio;
+        speedometer = getSpeedometer() - BRAKE_RATIO;
+        distanceTraveled += BRAKE_RATIO;
+        time += BRAKE_RATIO;
         Display.spaces();
         System.out.println("Braking...");
         displayDash();
