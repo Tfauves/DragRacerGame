@@ -2,13 +2,11 @@ package com.company.dragracer;
 
 import com.company.dragracer.enviroments.Garage;
 import com.company.dragracer.enviroments.Speedway;
-import com.company.dragracer.player.Player;
 import com.company.dragracer.util.UI;
 
 
 public class Game {
     private boolean isActiveGame = false;
-    Player player;
     Garage garage;
     Speedway speedway;
 

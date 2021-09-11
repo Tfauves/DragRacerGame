@@ -24,6 +24,14 @@ public abstract class Engine implements Engines {
         }
     }
 
+    @Override
+    public void off() {
+        if (isOperating) {
+            isOperating = false;
+            System.out.println("Engine is off");
+        }
+    }
+
 
     public int getHorsePower() {
         return horsePower;
