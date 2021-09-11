@@ -2,7 +2,7 @@ package com.company.dragracer.player;
 
 import com.company.dragracer.vehicles.Vehicle;
 
-public class Player {
+public abstract class Player {
     private Vehicle playerVehicle;
     private String name;
     private int score;
