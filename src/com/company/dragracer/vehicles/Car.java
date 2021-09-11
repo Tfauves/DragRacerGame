@@ -55,9 +55,10 @@ public class Car extends Vehicle{
     }
 
     public void coast() {
-        speedometer = getSpeedometer() - COAST_RATIO;
-        distanceTraveled += COAST_RATIO;
-        time += COAST_RATIO;
+        actionRatio(COAST_RATIO);
+        speedometer = getSpeedometer() - actionApplied;
+        distanceTraveled ++;
+        time += actionApplied;
         Display.spaces();
         System.out.println("Coasting...");
         displayDash();
