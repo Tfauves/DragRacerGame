@@ -16,10 +16,11 @@ public class Game {
     public void gamePlayer() {
         System.out.println("Enter Player Name: ");
         String userInput = UI.scanner.nextLine();
-        Player player = new racerOne(garage.getPlayerCar(), userInput, 0, 100);
+        Player player = new racerOne(null, userInput, 0, 100);
     }
 
     public void play() {
+//        gamePlayer();
         isActiveGame = true;
         while(isActiveGame) {
             garage = new Garage();
