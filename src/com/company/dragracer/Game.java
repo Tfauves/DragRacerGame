@@ -3,19 +3,20 @@ package com.company.dragracer;
 import com.company.dragracer.enviroments.Garage;
 import com.company.dragracer.enviroments.Speedway;
 import com.company.dragracer.player.Player;
-import com.company.dragracer.util.Display;
+import com.company.dragracer.player.racerOne;
+
 import com.company.dragracer.util.UI;
 
 
 public class Game {
-    private Player player;
     private boolean isActiveGame = false;
     Garage garage;
     Speedway speedway;
 
     public void gamePlayer() {
         System.out.println("Enter Player Name: ");
-        UI.scanner.nextLine();
+        String userInput = UI.scanner.nextLine();
+        Player player = new racerOne(garage.getPlayerCar(), userInput, 0, 100);
     }
 
     public void play() {
