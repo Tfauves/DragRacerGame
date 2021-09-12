@@ -14,4 +14,24 @@ public abstract class Player {
         this.score = score;
         this.health = health;
     }
+
+    public Vehicle getPlayerVehicle() {
+        return playerVehicle;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setPlayerVehicle(Vehicle playerVehicle) {
+        this.playerVehicle = playerVehicle;
+    }
 }

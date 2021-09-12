@@ -10,22 +10,24 @@ import com.company.dragracer.util.UI;
 
 public class Game {
     private boolean isActiveGame = false;
+    Player player;
     Garage garage;
     Speedway speedway;
 
     public void gamePlayer() {
         System.out.println("Enter Player Name: ");
         String userInput = UI.scanner.nextLine();
-        Player player = new racerOne(null, userInput, 0, 100);
+        player = new racerOne(null, userInput, 0, 100);
     }
 
     public void play() {
-//        gamePlayer();
+        gamePlayer();
         isActiveGame = true;
         while(isActiveGame) {
             garage = new Garage();
             speedway = new Speedway();
             garage.selectCar();
+            player.
             speedway.selectTrack();
             speedway.race(garage.getPlayerCar());
         }
