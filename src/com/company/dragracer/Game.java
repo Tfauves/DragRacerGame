@@ -21,13 +21,12 @@ public class Game {
     }
 
     public void play() {
-        gamePlayer();
         isActiveGame = true;
         while(isActiveGame) {
             garage = new Garage();
             speedway = new Speedway();
             garage.selectCar();
-            player.setPlayerVehicle(garage.getPlayerCar());
+//            player.setPlayerVehicle(garage.getPlayerCar());
             speedway.selectTrack();
             speedway.race(garage.getPlayerCar());
             System.out.println(player.getName() + player.getPlayerVehicle());
