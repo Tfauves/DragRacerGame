@@ -131,6 +131,8 @@ public class Speedway {
     public void goodStop(Vehicle playerVehicle) {
         if (playerVehicle.getDistanceTraveled() > playerVehicle.getDistanceToFinish() && playerVehicle.getSpeedometer() == 0) {
             System.out.println("Not a bad stop\n20pts awarded");
+            System.out.println("Your race results: Distance of Race: " + playerVehicle.getDistanceToFinish() + "m Distance Traveled: " + playerVehicle.getDistanceTraveled() + " Time: " + playerVehicle.getTime() + "s Points: ");
+
             System.exit(0);
         }
     }
@@ -138,7 +140,7 @@ public class Speedway {
     public void perfectStop(Vehicle playerVehicle) {
         if (playerVehicle.getDistanceToFinish() == playerVehicle.getDistanceTraveled() && playerVehicle.getSpeedometer() == 0) {
             System.out.println("Perfect Stop\n50pts awarded.");
-            System.out.println("Your race results: Distance of Race: " + playerVehicle.getDistanceToFinish() + "m Distance Traveled: " + playerVehicle.getDistanceTraveled() + " Time: " + playerVehicle.getTime() + " Points: ");
+            System.out.println("Your race results: Distance of Race: " + playerVehicle.getDistanceToFinish() + "m Distance Traveled: " + playerVehicle.getDistanceTraveled() + " Time: " + playerVehicle.getTime() + "s Points: ");
             System.exit(0);
         }
     }
