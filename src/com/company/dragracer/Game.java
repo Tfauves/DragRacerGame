@@ -27,9 +27,10 @@ public class Game {
             garage = new Garage();
             speedway = new Speedway();
             garage.selectCar();
-            player.
+            player.setPlayerVehicle(garage.getPlayerCar());
             speedway.selectTrack();
             speedway.race(garage.getPlayerCar());
+            System.out.println(player.getName() + player.getPlayerVehicle());
         }
     }
 
