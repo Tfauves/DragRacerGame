@@ -1,5 +1,6 @@
 package com.company.dragracer.enviroments;
 
+import com.company.dragracer.player.Player;
 import com.company.dragracer.util.Color;
 import com.company.dragracer.util.Display;
 import com.company.dragracer.util.UI;
@@ -9,6 +10,8 @@ public class Speedway {
     private final static String SELECT_TRACK_PROMPT = "Select A Track";
     private final static String MENU_PROMPT = "Make your Selection";
     Track newTrack;
+    private final int MAX_POINTS = 50;
+    private final int MIN_POINTS = 20;
     private final String[] TRACK_LIST = new String[]{
             "1. | Difficulty: Noob | Distance to finish: 200 meters | Hazard: Gravel Patch |",
             "2. | Difficulty: Beginner | Distance to finish: 400 meters | Hazard: Watery Lake |",
@@ -81,7 +84,7 @@ public class Speedway {
         } while(!isRaceStarted);
     }
 
-    public void race(Vehicle playerVehicle) {
+    public void race(Player player, Vehicle playerVehicle) {
         racePrompt(playerVehicle);
         boolean isActive = true;
         String userInput;
@@ -103,18 +106,18 @@ public class Speedway {
                 }
 
             }
-        finishLine(playerVehicle);
+        finishLine(player, playerVehicle);
         }
     }
 
-    public void finishLine(Vehicle playerVehicle) {
-        goodStop(playerVehicle);
-        shortOfFinish(playerVehicle);
-        hazardCollision(playerVehicle);
-        perfectStop(playerVehicle);
+    public void finishLine(Player player, Vehicle playerVehicle) {
+        goodStop(player, playerVehicle);
+        shortOfFinish(player, playerVehicle);
+        hazardCollision(player, playerVehicle);
+        perfectStop(player, playerVehicle);
     }
 
-    public void hazardCollision(Vehicle playerVehicle) {
+    public void hazardCollision(Player player, Vehicle playerVehicle) {
         int finishDiff = playerVehicle.getDistanceTraveled() - playerVehicle.getDistanceToFinish();
         if (finishDiff >= newTrack.hazard.getDistanceFromFinish()) {
             System.out.println("Bruh!! You failed to stop and hit something... No points!! ");
@@ -122,25 +125,25 @@ public class Speedway {
         }
     }
 
-    public void shortOfFinish(Vehicle playerVehicle) {
+    public void shortOfFinish(Player player, Vehicle playerVehicle) {
         if (playerVehicle.getDistanceTraveled() < playerVehicle.getDistanceToFinish() && playerVehicle.getSpeedometer() == 0) {
             System.out.println("You are not at the finish line yet, don't stop...\nIf you wish to quit quitter use the (q) for exit command.");
         }
     }
 
-    public void goodStop(Vehicle playerVehicle) {
+    public void goodStop(Player player, Vehicle playerVehicle) {
         if (playerVehicle.getDistanceTraveled() > playerVehicle.getDistanceToFinish() && playerVehicle.getSpeedometer() == 0) {
-            System.out.println("Not a bad stop\n20pts awarded");
-            System.out.println("Your race results: Distance of Race: " + playerVehicle.getDistanceToFinish() + "m Distance Traveled: " + playerVehicle.getDistanceTraveled() + "m Time: " + playerVehicle.getTime() + "s Points: ");
-
+            System.out.println("Not a bad stop\npts awarded");
+            player.setScore(player.getScore() + MIN_POINTS);
+            System.out.println("Your race results: Distance of Race: " + playerVehicle.getDistanceToFinish() + "m Distance Traveled: " + playerVehicle.getDistanceTraveled() + "m Time: " + playerVehicle.getTime() + "s Points: " + player.getScore());
             System.exit(0);
         }
     }
 
-    public void perfectStop(Vehicle playerVehicle) {
+    public void perfectStop(Player player, Vehicle playerVehicle) {
         if (playerVehicle.getDistanceToFinish() == playerVehicle.getDistanceTraveled() && playerVehicle.getSpeedometer() == 0) {
-            System.out.println("Perfect Stop\n50pts awarded.");
-            System.out.println("Your race results: Distance of Race: " + playerVehicle.getDistanceToFinish() + "m Distance Traveled: " + playerVehicle.getDistanceTraveled() + "m Time: " + playerVehicle.getTime() + "s Points: ");
+            System.out.println("Perfect Stop\nMax pts awarded.");
+            System.out.println("Your race results: Distance of Race: " + playerVehicle.getDistanceToFinish() + "m Distance Traveled: " + playerVehicle.getDistanceTraveled() + "m Time: " + playerVehicle.getTime() + "s Points: " + player.getScore());
             System.exit(0);
         }
     }
