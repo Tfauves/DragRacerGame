@@ -34,4 +34,12 @@ public abstract class Player {
     public void setPlayerVehicle(Vehicle playerVehicle) {
         this.playerVehicle = playerVehicle;
     }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
 }
