@@ -29,7 +29,7 @@ public class Garage {
     }
 
     public void selectCar() {
-        Display.titleScreen();
+//        Display.titleScreen();
         boolean isActive = true;
         while (isActive) {
             Display.displayVehicleTitle();

@@ -5,6 +5,7 @@ import com.company.dragracer.enviroments.Speedway;
 import com.company.dragracer.player.Player;
 import com.company.dragracer.player.racerOne;
 
+import com.company.dragracer.util.Display;
 import com.company.dragracer.util.UI;
 
 
@@ -21,6 +22,7 @@ public class Game {
     }
 
     public void play() {
+        Display.titleScreen();
         isActiveGame = true;
         while(isActiveGame) {
             gamePlayer();
