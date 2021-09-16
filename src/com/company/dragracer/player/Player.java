@@ -1,9 +1,11 @@
 package com.company.dragracer.player;
 
+import com.company.dragracer.enviroments.Garage;
 import com.company.dragracer.vehicles.Vehicle;
 
 public abstract class Player {
     private Vehicle playerVehicle;
+    private Garage playerGarage;
     private String name;
     private int score;
     private int health;
@@ -13,6 +15,7 @@ public abstract class Player {
         this.name = name;
         this.score = score;
         this.health = health;
+        playerGarage = new Garage();
     }
 
     public Vehicle getPlayerVehicle() {
@@ -41,5 +44,9 @@ public abstract class Player {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public Garage getPlayerGarage() {
+        return playerGarage;
     }
 }
