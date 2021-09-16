@@ -12,7 +12,7 @@ import com.company.dragracer.util.UI;
 public class Game {
     private boolean isActiveGame = false;
     Player player;
-    Garage garage;
+//    Garage garage;
     Speedway speedway;
 
     public void gamePlayer() {
@@ -26,12 +26,13 @@ public class Game {
         isActiveGame = true;
         while(isActiveGame) {
             gamePlayer();
-            garage = new Garage();
+//            garage = new Garage();
+            player.getPlayerGarage().selectCar();
             speedway = new Speedway();
-            garage.selectCar();
+//            garage.selectCar();
 //            player.setPlayerVehicle(garage.getPlayerCar());
             speedway.selectTrack();
-            speedway.race(player, garage.getPlayerCar());
+            speedway.race(player, player.getPlayerGarage().getPlayerCar());
             System.out.println(player.getName() + player.getPlayerVehicle());
         }
     }
